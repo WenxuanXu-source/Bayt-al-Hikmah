@@ -2,7 +2,7 @@
 
 **Bayt al-Hikmah** (House of Wisdom) is an offline-first vocabulary trainer for **Ancient Greek** and **Classical Latin**. It is built for students and researchers who want a compact core vocabulary, systematic repetition, and grammar-aware testing without an internet connection.
 
-Current release: **V1.1 Dogfood**.
+Current release: **V1.2 Dogfood**.
 
 ## Features
 
@@ -43,11 +43,11 @@ Requirements:
 
 - JDK 21
 - Android SDK 35
-- Gradle 8.11.1 (or a compatible Gradle wrapper)
+- Gradle 8.11.1 (the repository includes the Gradle wrapper)
 
 ```bash
 export JAVA_HOME=/path/to/jdk-21
-gradle :app:assembleDebug
+./gradlew :app:assembleDebug
 ```
 
 The debug APK is written to:

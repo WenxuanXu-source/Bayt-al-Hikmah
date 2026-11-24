@@ -1,0 +1,834 @@
+{
+  "schemaVersion": 1,
+  "languageCode": "grc",
+  "tables": [
+    {
+      "id": "grc-noun-1f",
+      "title": "First declension (feminine): ἀρχή",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "ἀρχή",
+          "ἀρχαί"
+        ],
+        [
+          "Genitive",
+          "ἀρχῆς",
+          "ἀρχῶν"
+        ],
+        [
+          "Dative",
+          "ἀρχῇ",
+          "ἀρχαῖς"
+        ],
+        [
+          "Accusative",
+          "ἀρχήν",
+          "ἀρχάς"
+        ],
+        [
+          "Vocative",
+          "ἀρχή",
+          "ἀρχαί"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-1m",
+      "title": "First declension (masculine): πολίτης",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "πολίτης",
+          "πολῖται"
+        ],
+        [
+          "Genitive",
+          "πολίτου",
+          "πολιτῶν"
+        ],
+        [
+          "Dative",
+          "πολίτῃ",
+          "πολίταις"
+        ],
+        [
+          "Accusative",
+          "πολίτην",
+          "πολίτας"
+        ],
+        [
+          "Vocative",
+          "πολῖτα",
+          "πολῖται"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-2m",
+      "title": "Second declension (masculine): λόγος",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "λόγος",
+          "λόγοι"
+        ],
+        [
+          "Genitive",
+          "λόγου",
+          "λόγων"
+        ],
+        [
+          "Dative",
+          "λόγῳ",
+          "λόγοις"
+        ],
+        [
+          "Accusative",
+          "λόγον",
+          "λόγους"
+        ],
+        [
+          "Vocative",
+          "λόγε",
+          "λόγοι"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-2n",
+      "title": "Second declension (neuter): ἔργον",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "ἔργον",
+          "ἔργα"
+        ],
+        [
+          "Genitive",
+          "ἔργου",
+          "ἔργων"
+        ],
+        [
+          "Dative",
+          "ἔργῳ",
+          "ἔργοις"
+        ],
+        [
+          "Accusative",
+          "ἔργον",
+          "ἔργα"
+        ],
+        [
+          "Vocative",
+          "ἔργον",
+          "ἔργα"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-3",
+      "title": "Third declension (consonant stem): φύλαξ",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "φύλαξ",
+          "φύλακες"
+        ],
+        [
+          "Genitive",
+          "φύλακος",
+          "φυλάκων"
+        ],
+        [
+          "Dative",
+          "φύλακι",
+          "φύλαξι(ν)"
+        ],
+        [
+          "Accusative",
+          "φύλακα",
+          "φύλακας"
+        ],
+        [
+          "Vocative",
+          "φύλαξ",
+          "φύλακες"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-3n",
+      "title": "Third declension (neuter): σῶμα",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "σῶμα",
+          "σώματα"
+        ],
+        [
+          "Genitive",
+          "σώματος",
+          "σωμάτων"
+        ],
+        [
+          "Dative",
+          "σώματι",
+          "σώμασι(ν)"
+        ],
+        [
+          "Accusative",
+          "σῶμα",
+          "σώματα"
+        ],
+        [
+          "Vocative",
+          "σῶμα",
+          "σώματα"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-3i",
+      "title": "Third declension (i-stem): πόλις",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "πόλις",
+          "πόλεις"
+        ],
+        [
+          "Genitive",
+          "πόλεως",
+          "πόλεων"
+        ],
+        [
+          "Dative",
+          "πόλει",
+          "πόλεσι(ν)"
+        ],
+        [
+          "Accusative",
+          "πόλιν",
+          "πόλεις"
+        ],
+        [
+          "Vocative",
+          "πόλι",
+          "πόλεις"
+        ]
+      ]
+    },
+    {
+      "id": "grc-noun-3andr",
+      "title": "Third declension (stem ἀνδρ-): ἀνήρ",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "ἀνήρ",
+          "ἄνδρες"
+        ],
+        [
+          "Genitive",
+          "ἀνδρός",
+          "ἀνδρῶν"
+        ],
+        [
+          "Dative",
+          "ἀνδρί",
+          "ἀνδράσι(ν)"
+        ],
+        [
+          "Accusative",
+          "ἄνδρα",
+          "ἄνδρας"
+        ],
+        [
+          "Vocative",
+          "ἄνερ",
+          "ἄνδρες"
+        ]
+      ]
+    },
+    {
+      "id": "grc-adj-12",
+      "title": "First and second declension: ἀγαθός",
+      "category": "Adjectives",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Masc. pl.",
+        "Fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "ἀγαθός",
+          "ἀγαθή",
+          "ἀγαθόν",
+          "ἀγαθοί",
+          "ἀγαθαί",
+          "ἀγαθά"
+        ],
+        [
+          "Genitive",
+          "ἀγαθοῦ",
+          "ἀγαθῆς",
+          "ἀγαθοῦ",
+          "ἀγαθῶν",
+          "ἀγαθῶν",
+          "ἀγαθῶν"
+        ],
+        [
+          "Dative",
+          "ἀγαθῷ",
+          "ἀγαθῇ",
+          "ἀγαθῷ",
+          "ἀγαθοῖς",
+          "ἀγαθαῖς",
+          "ἀγαθοῖς"
+        ],
+        [
+          "Accusative",
+          "ἀγαθόν",
+          "ἀγαθήν",
+          "ἀγαθόν",
+          "ἀγαθούς",
+          "ἀγαθάς",
+          "ἀγαθά"
+        ]
+      ]
+    },
+    {
+      "id": "grc-adj-megas",
+      "title": "Irregular: μέγας, μεγάλη, μέγα",
+      "category": "Adjectives",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Masc. pl.",
+        "Fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "μέγας",
+          "μεγάλη",
+          "μέγα",
+          "μεγάλοι",
+          "μεγάλαι",
+          "μεγάλα"
+        ],
+        [
+          "Genitive",
+          "μεγάλου",
+          "μεγάλης",
+          "μεγάλου",
+          "μεγάλων",
+          "μεγάλων",
+          "μεγάλων"
+        ],
+        [
+          "Dative",
+          "μεγάλῳ",
+          "μεγάλῃ",
+          "μεγάλῳ",
+          "μεγάλοις",
+          "μεγάλαις",
+          "μεγάλοις"
+        ],
+        [
+          "Accusative",
+          "μέγαν",
+          "μεγάλην",
+          "μέγα",
+          "μεγάλους",
+          "μεγάλας",
+          "μεγάλα"
+        ]
+      ]
+    },
+    {
+      "id": "grc-pron-article",
+      "title": "Definite article: ὁ, ἡ, τό",
+      "category": "Pronouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masculine",
+        "Feminine",
+        "Neuter"
+      ],
+      "rows": [
+        [
+          "Nominative sg.",
+          "ὁ",
+          "ἡ",
+          "τό"
+        ],
+        [
+          "Genitive sg.",
+          "τοῦ",
+          "τῆς",
+          "τοῦ"
+        ],
+        [
+          "Dative sg.",
+          "τῷ",
+          "τῇ",
+          "τῷ"
+        ],
+        [
+          "Accusative sg.",
+          "τόν",
+          "τήν",
+          "τό"
+        ],
+        [
+          "Nominative pl.",
+          "οἱ",
+          "αἱ",
+          "τά"
+        ],
+        [
+          "Genitive pl.",
+          "τῶν",
+          "τῶν",
+          "τῶν"
+        ],
+        [
+          "Dative pl.",
+          "τοῖς",
+          "ταῖς",
+          "τοῖς"
+        ],
+        [
+          "Accusative pl.",
+          "τούς",
+          "τάς",
+          "τά"
+        ]
+      ]
+    },
+    {
+      "id": "grc-pron-ego",
+      "title": "Personal pronoun: ἐγώ",
+      "category": "Pronouns",
+      "note": "Enclitic forms μου, μοι, με also occur.",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "ἐγώ",
+          "ἡμεῖς"
+        ],
+        [
+          "Genitive",
+          "ἐμοῦ",
+          "ἡμῶν"
+        ],
+        [
+          "Dative",
+          "ἐμοί",
+          "ἡμῖν"
+        ],
+        [
+          "Accusative",
+          "ἐμέ",
+          "ἡμᾶς"
+        ]
+      ]
+    },
+    {
+      "id": "grc-pron-su",
+      "title": "Personal pronoun: σύ",
+      "category": "Pronouns",
+      "note": "Enclitic forms σου, σοι, σε also occur.",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "σύ",
+          "ὑμεῖς"
+        ],
+        [
+          "Genitive",
+          "σοῦ",
+          "ὑμῶν"
+        ],
+        [
+          "Dative",
+          "σοί",
+          "ὑμῖν"
+        ],
+        [
+          "Accusative",
+          "σέ",
+          "ὑμᾶς"
+        ]
+      ]
+    },
+    {
+      "id": "grc-pron-outos",
+      "title": "Demonstrative: οὗτος, αὕτη, τοῦτο",
+      "category": "Pronouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Masc. pl.",
+        "Fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "οὗτος",
+          "αὕτη",
+          "τοῦτο",
+          "οὗτοι",
+          "αὗται",
+          "ταῦτα"
+        ],
+        [
+          "Genitive",
+          "τούτου",
+          "ταύτης",
+          "τούτου",
+          "τούτων",
+          "τούτων",
+          "τούτων"
+        ],
+        [
+          "Dative",
+          "τούτῳ",
+          "ταύτῃ",
+          "τούτῳ",
+          "τούτοις",
+          "ταύταις",
+          "τούτοις"
+        ],
+        [
+          "Accusative",
+          "τοῦτον",
+          "ταύτην",
+          "τοῦτο",
+          "τούτους",
+          "ταύτας",
+          "ταῦτα"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-lyo-pres",
+      "title": "λύω: present and imperfect indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "λύω",
+          "λύεις",
+          "λύει",
+          "λύομεν",
+          "λύετε",
+          "λύουσι(ν)"
+        ],
+        [
+          "Imperfect",
+          "ἔλυον",
+          "ἔλυες",
+          "ἔλυε(ν)",
+          "ἐλύομεν",
+          "ἐλύετε",
+          "ἔλυον"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-lyo-past",
+      "title": "λύω: future, aorist, and perfect indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Future",
+          "λύσω",
+          "λύσεις",
+          "λύσει",
+          "λύσομεν",
+          "λύσετε",
+          "λύσουσι(ν)"
+        ],
+        [
+          "Aorist",
+          "ἔλυσα",
+          "ἔλυσας",
+          "ἔλυσε(ν)",
+          "ἐλύσαμεν",
+          "ἐλύσατε",
+          "ἔλυσαν"
+        ],
+        [
+          "Perfect",
+          "λέλυκα",
+          "λέλυκας",
+          "λέλυκε(ν)",
+          "λελύκαμεν",
+          "λελύκατε",
+          "λελύκασι(ν)"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-lyo-pass",
+      "title": "λύω: present and aorist indicative passive",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "λύομαι",
+          "λύῃ",
+          "λύεται",
+          "λυόμεθα",
+          "λύεσθε",
+          "λύονται"
+        ],
+        [
+          "Aorist",
+          "ἐλύθην",
+          "ἐλύθης",
+          "ἐλύθη",
+          "ἐλύθημεν",
+          "ἐλύθητε",
+          "ἐλύθησαν"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-eimi",
+      "title": "εἰμί: present and imperfect indicative",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "εἰμί",
+          "εἶ",
+          "ἐστί(ν)",
+          "ἐσμέν",
+          "ἐστέ",
+          "εἰσί(ν)"
+        ],
+        [
+          "Imperfect",
+          "ἦν",
+          "ἦσθα",
+          "ἦν",
+          "ἦμεν",
+          "ἦτε",
+          "ἦσαν"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-poieo",
+      "title": "ποιέω: present indicative active (contract)",
+      "category": "Verbs",
+      "note": "The present stem ποιε- contracts with the endings.",
+      "columns": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "First",
+          "ποιῶ",
+          "ποιοῦμεν"
+        ],
+        [
+          "Second",
+          "ποιεῖς",
+          "ποιεῖτε"
+        ],
+        [
+          "Third",
+          "ποιεῖ",
+          "ποιοῦσι(ν)"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-phemi",
+      "title": "φημί: present indicative",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "First",
+          "φημί",
+          "φαμέν"
+        ],
+        [
+          "Second",
+          "φῄς",
+          "φατέ"
+        ],
+        [
+          "Third",
+          "φησί(ν)",
+          "φασί(ν)"
+        ]
+      ]
+    },
+    {
+      "id": "grc-verb-inf",
+      "title": "Principal infinitives: λύω",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Infinitive",
+        "Analysis"
+      ],
+      "rows": [
+        [
+          "λύειν",
+          "Present active"
+        ],
+        [
+          "λῦσαι",
+          "Aorist active"
+        ],
+        [
+          "λελυκέναι",
+          "Perfect active"
+        ],
+        [
+          "λύεσθαι",
+          "Present middle/passive"
+        ],
+        [
+          "λυθῆναι",
+          "Aorist passive"
+        ]
+      ]
+    }
+  ]
+}

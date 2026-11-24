@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "languages": [
+    {
+      "code": "grc",
+      "asset": "dictionary/greek.json"
+    },
+    {
+      "code": "lat",
+      "asset": "dictionary/latin.json"
+    }
+  ]
+}

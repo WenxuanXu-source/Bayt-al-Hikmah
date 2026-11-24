@@ -1,0 +1,960 @@
+{
+  "schemaVersion": 1,
+  "languageCode": "lat",
+  "tables": [
+    {
+      "id": "lat-noun-1",
+      "title": "First declension: aqua",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "aqua",
+          "aquae"
+        ],
+        [
+          "Genitive",
+          "aquae",
+          "aquārum"
+        ],
+        [
+          "Dative",
+          "aquae",
+          "aquīs"
+        ],
+        [
+          "Accusative",
+          "aquam",
+          "aquās"
+        ],
+        [
+          "Ablative",
+          "aquā",
+          "aquīs"
+        ],
+        [
+          "Vocative",
+          "aqua",
+          "aquae"
+        ]
+      ]
+    },
+    {
+      "id": "lat-noun-2m",
+      "title": "Second declension (masculine): servus",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "servus",
+          "servī"
+        ],
+        [
+          "Genitive",
+          "servī",
+          "servōrum"
+        ],
+        [
+          "Dative",
+          "servō",
+          "servīs"
+        ],
+        [
+          "Accusative",
+          "servum",
+          "servōs"
+        ],
+        [
+          "Ablative",
+          "servō",
+          "servīs"
+        ],
+        [
+          "Vocative",
+          "serve",
+          "servī"
+        ]
+      ]
+    },
+    {
+      "id": "lat-noun-2n",
+      "title": "Second declension (neuter): bellum",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "bellum",
+          "bella"
+        ],
+        [
+          "Genitive",
+          "bellī",
+          "bellōrum"
+        ],
+        [
+          "Dative",
+          "bellō",
+          "bellīs"
+        ],
+        [
+          "Accusative",
+          "bellum",
+          "bella"
+        ],
+        [
+          "Ablative",
+          "bellō",
+          "bellīs"
+        ],
+        [
+          "Vocative",
+          "bellum",
+          "bella"
+        ]
+      ]
+    },
+    {
+      "id": "lat-noun-3",
+      "title": "Third declension (masculine/feminine): rēx",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "rēx",
+          "rēgēs"
+        ],
+        [
+          "Genitive",
+          "rēgis",
+          "rēgum"
+        ],
+        [
+          "Dative",
+          "rēgī",
+          "rēgibus"
+        ],
+        [
+          "Accusative",
+          "rēgem",
+          "rēgēs"
+        ],
+        [
+          "Ablative",
+          "rēge",
+          "rēgibus"
+        ],
+        [
+          "Vocative",
+          "rēx",
+          "rēgēs"
+        ]
+      ]
+    },
+    {
+      "id": "lat-noun-3n",
+      "title": "Third declension (neuter): nōmen",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "nōmen",
+          "nōmina"
+        ],
+        [
+          "Genitive",
+          "nōminis",
+          "nōminum"
+        ],
+        [
+          "Dative",
+          "nōminī",
+          "nōminibus"
+        ],
+        [
+          "Accusative",
+          "nōmen",
+          "nōmina"
+        ],
+        [
+          "Ablative",
+          "nōmine",
+          "nōminibus"
+        ],
+        [
+          "Vocative",
+          "nōmen",
+          "nōmina"
+        ]
+      ]
+    },
+    {
+      "id": "lat-noun-4",
+      "title": "Fourth declension: manus",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "manus",
+          "manūs"
+        ],
+        [
+          "Genitive",
+          "manūs",
+          "manuum"
+        ],
+        [
+          "Dative",
+          "manuī",
+          "manibus"
+        ],
+        [
+          "Accusative",
+          "manum",
+          "manūs"
+        ],
+        [
+          "Ablative",
+          "manū",
+          "manibus"
+        ],
+        [
+          "Vocative",
+          "manus",
+          "manūs"
+        ]
+      ]
+    },
+    {
+      "id": "lat-noun-5",
+      "title": "Fifth declension: diēs",
+      "category": "Nouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "diēs",
+          "diēs"
+        ],
+        [
+          "Genitive",
+          "diēī",
+          "diērum"
+        ],
+        [
+          "Dative",
+          "diēī",
+          "diēbus"
+        ],
+        [
+          "Accusative",
+          "diem",
+          "diēs"
+        ],
+        [
+          "Ablative",
+          "diē",
+          "diēbus"
+        ],
+        [
+          "Vocative",
+          "diēs",
+          "diēs"
+        ]
+      ]
+    },
+    {
+      "id": "lat-adj-12",
+      "title": "First and second declension: bonus, bona, bonum",
+      "category": "Adjectives",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Masc. pl.",
+        "Fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "bonus",
+          "bona",
+          "bonum",
+          "bonī",
+          "bonae",
+          "bona"
+        ],
+        [
+          "Genitive",
+          "bonī",
+          "bonae",
+          "bonī",
+          "bonōrum",
+          "bonārum",
+          "bonōrum"
+        ],
+        [
+          "Dative",
+          "bonō",
+          "bonae",
+          "bonō",
+          "bonīs",
+          "bonīs",
+          "bonīs"
+        ],
+        [
+          "Accusative",
+          "bonum",
+          "bonam",
+          "bonum",
+          "bonōs",
+          "bonās",
+          "bona"
+        ],
+        [
+          "Ablative",
+          "bonō",
+          "bonā",
+          "bonō",
+          "bonīs",
+          "bonīs",
+          "bonīs"
+        ]
+      ]
+    },
+    {
+      "id": "lat-adj-3",
+      "title": "Third declension: fortis, forte",
+      "category": "Adjectives",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc./fem. sg.",
+        "Neut. sg.",
+        "Masc./fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "fortis",
+          "forte",
+          "fortēs",
+          "fortia"
+        ],
+        [
+          "Genitive",
+          "fortis",
+          "fortis",
+          "fortium",
+          "fortium"
+        ],
+        [
+          "Dative",
+          "fortī",
+          "fortī",
+          "fortibus",
+          "fortibus"
+        ],
+        [
+          "Accusative",
+          "fortem",
+          "forte",
+          "fortēs",
+          "fortia"
+        ],
+        [
+          "Ablative",
+          "fortī",
+          "fortī",
+          "fortibus",
+          "fortibus"
+        ]
+      ]
+    },
+    {
+      "id": "lat-pron-personal",
+      "title": "Personal pronouns",
+      "category": "Pronouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "ego",
+        "tū",
+        "nōs",
+        "vōs"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "ego",
+          "tū",
+          "nōs",
+          "vōs"
+        ],
+        [
+          "Genitive",
+          "meī",
+          "tuī",
+          "nostrī",
+          "vestrī"
+        ],
+        [
+          "Dative",
+          "mihi",
+          "tibi",
+          "nōbīs",
+          "vōbīs"
+        ],
+        [
+          "Accusative",
+          "mē",
+          "tē",
+          "nōs",
+          "vōs"
+        ],
+        [
+          "Ablative",
+          "mē",
+          "tē",
+          "nōbīs",
+          "vōbīs"
+        ]
+      ]
+    },
+    {
+      "id": "lat-pron-hic",
+      "title": "Demonstrative: hic, haec, hoc",
+      "category": "Pronouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Masc. pl.",
+        "Fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "hic",
+          "haec",
+          "hoc",
+          "hī",
+          "hae",
+          "haec"
+        ],
+        [
+          "Genitive",
+          "huius",
+          "huius",
+          "huius",
+          "hōrum",
+          "hārum",
+          "hōrum"
+        ],
+        [
+          "Dative",
+          "huic",
+          "huic",
+          "huic",
+          "hīs",
+          "hīs",
+          "hīs"
+        ],
+        [
+          "Accusative",
+          "hunc",
+          "hanc",
+          "hoc",
+          "hōs",
+          "hās",
+          "haec"
+        ],
+        [
+          "Ablative",
+          "hōc",
+          "hāc",
+          "hōc",
+          "hīs",
+          "hīs",
+          "hīs"
+        ]
+      ]
+    },
+    {
+      "id": "lat-pron-qui",
+      "title": "Relative: quī, quae, quod",
+      "category": "Pronouns",
+      "note": "",
+      "columns": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Masc. pl.",
+        "Fem. pl.",
+        "Neut. pl."
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "quī",
+          "quae",
+          "quod",
+          "quī",
+          "quae",
+          "quae"
+        ],
+        [
+          "Genitive",
+          "cuius",
+          "cuius",
+          "cuius",
+          "quōrum",
+          "quārum",
+          "quōrum"
+        ],
+        [
+          "Dative",
+          "cui",
+          "cui",
+          "cui",
+          "quibus",
+          "quibus",
+          "quibus"
+        ],
+        [
+          "Accusative",
+          "quem",
+          "quam",
+          "quod",
+          "quōs",
+          "quās",
+          "quae"
+        ],
+        [
+          "Ablative",
+          "quō",
+          "quā",
+          "quō",
+          "quibus",
+          "quibus",
+          "quibus"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-amo",
+      "title": "amō: present system indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "amō",
+          "amās",
+          "amat",
+          "amāmus",
+          "amātis",
+          "amant"
+        ],
+        [
+          "Imperfect",
+          "amābam",
+          "amābās",
+          "amābat",
+          "amābāmus",
+          "amābātis",
+          "amābant"
+        ],
+        [
+          "Future",
+          "amābō",
+          "amābis",
+          "amābit",
+          "amābimus",
+          "amābitis",
+          "amābunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-amo-perf",
+      "title": "amō: perfect system indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Perfect",
+          "amāvī",
+          "amāvistī",
+          "amāvit",
+          "amāvimus",
+          "amāvistis",
+          "amāvērunt"
+        ],
+        [
+          "Pluperfect",
+          "amāveram",
+          "amāverās",
+          "amāverat",
+          "amāverāmus",
+          "amāverātis",
+          "amāverant"
+        ],
+        [
+          "Future perfect",
+          "amāverō",
+          "amāveris",
+          "amāverit",
+          "amāverimus",
+          "amāveritis",
+          "amāverint"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-habeo",
+      "title": "habeō: indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "habeō",
+          "habēs",
+          "habet",
+          "habēmus",
+          "habētis",
+          "habent"
+        ],
+        [
+          "Future",
+          "habēbō",
+          "habēbis",
+          "habēbit",
+          "habēbimus",
+          "habēbitis",
+          "habēbunt"
+        ],
+        [
+          "Perfect",
+          "habuī",
+          "habuistī",
+          "habuit",
+          "habuimus",
+          "habuistis",
+          "habuērunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-mitto",
+      "title": "mittō: indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "mittō",
+          "mittis",
+          "mittit",
+          "mittimus",
+          "mittitis",
+          "mittunt"
+        ],
+        [
+          "Future",
+          "mittam",
+          "mittēs",
+          "mittet",
+          "mittēmus",
+          "mittētis",
+          "mittent"
+        ],
+        [
+          "Perfect",
+          "mīsī",
+          "mīsistī",
+          "mīsit",
+          "mīsimus",
+          "mīsistis",
+          "mīsērunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-facio",
+      "title": "faciō: present and perfect indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "faciō",
+          "facis",
+          "facit",
+          "facimus",
+          "facitis",
+          "faciunt"
+        ],
+        [
+          "Perfect",
+          "fēcī",
+          "fēcistī",
+          "fēcit",
+          "fēcimus",
+          "fēcistis",
+          "fēcērunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-audio",
+      "title": "audiō: indicative active",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "audiō",
+          "audīs",
+          "audit",
+          "audīmus",
+          "audītis",
+          "audiunt"
+        ],
+        [
+          "Future",
+          "audiam",
+          "audiēs",
+          "audiet",
+          "audiēmus",
+          "audiētis",
+          "audient"
+        ],
+        [
+          "Perfect",
+          "audīvī",
+          "audīvistī",
+          "audīvit",
+          "audīvimus",
+          "audīvistis",
+          "audīvērunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-sum",
+      "title": "Irregular: sum, present system",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Tense",
+        "1 sg.",
+        "2 sg.",
+        "3 sg.",
+        "1 pl.",
+        "2 pl.",
+        "3 pl."
+      ],
+      "rows": [
+        [
+          "Present",
+          "sum",
+          "es",
+          "est",
+          "sumus",
+          "estis",
+          "sunt"
+        ],
+        [
+          "Imperfect",
+          "eram",
+          "erās",
+          "erat",
+          "erāmus",
+          "erātis",
+          "erant"
+        ],
+        [
+          "Future",
+          "erō",
+          "eris",
+          "erit",
+          "erimus",
+          "eritis",
+          "erunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-possum",
+      "title": "Irregular: possum, present indicative",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "First",
+          "possum",
+          "possumus"
+        ],
+        [
+          "Second",
+          "potes",
+          "potestis"
+        ],
+        [
+          "Third",
+          "potest",
+          "possunt"
+        ]
+      ]
+    },
+    {
+      "id": "lat-verb-inf",
+      "title": "Infinitives",
+      "category": "Verbs",
+      "note": "",
+      "columns": [
+        "Infinitive",
+        "Analysis"
+      ],
+      "rows": [
+        [
+          "amāre",
+          "First conjugation, present active"
+        ],
+        [
+          "habēre",
+          "Second conjugation, present active"
+        ],
+        [
+          "dīcere",
+          "Third conjugation, present active"
+        ],
+        [
+          "venīre",
+          "Fourth conjugation, present active"
+        ],
+        [
+          "audīre",
+          "Fourth conjugation, present active"
+        ],
+        [
+          "esse",
+          "Irregular, present active (sum)"
+        ],
+        [
+          "posse",
+          "Irregular, present active (possum)"
+        ]
+      ]
+    }
+  ]
+}
