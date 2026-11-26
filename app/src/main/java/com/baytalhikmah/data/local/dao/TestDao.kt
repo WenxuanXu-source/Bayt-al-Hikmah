@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.baytalhikmah.data.local.TestQuestionEntity
 import com.baytalhikmah.data.local.TestSessionEntity
+import com.baytalhikmah.data.model.VocabBook
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -67,11 +68,11 @@ interface TestDao {
     @Query("SELECT MAX(groupIndex) FROM test_questions WHERE sessionId = :sessionId")
     suspend fun maxGroup(sessionId: String): Int?
 
-    @Query("SELECT * FROM test_sessions WHERE languageCode = :language AND status = 'IN_PROGRESS' ORDER BY createdAt DESC")
-    fun observeInProgress(language: String): Flow<List<TestSessionEntity>>
+    @Query("SELECT * FROM test_sessions WHERE languageCode = :language AND book = :book AND status = 'IN_PROGRESS' ORDER BY createdAt DESC")
+    fun observeInProgress(language: String, book: VocabBook): Flow<List<TestSessionEntity>>
 
-    @Query("SELECT * FROM test_sessions WHERE languageCode = :language AND status = 'IN_PROGRESS' ORDER BY createdAt DESC")
-    suspend fun inProgress(language: String): List<TestSessionEntity>
+    @Query("SELECT * FROM test_sessions WHERE languageCode = :language AND book = :book AND status = 'IN_PROGRESS' ORDER BY createdAt DESC")
+    suspend fun inProgress(language: String, book: VocabBook): List<TestSessionEntity>
 
     @Query("SELECT * FROM test_sessions WHERE sessionDate = :date AND status = 'IN_PROGRESS'")
     suspend fun inProgressForDate(date: String): List<TestSessionEntity>
@@ -79,14 +80,14 @@ interface TestDao {
     @Query(
         """
         SELECT * FROM test_sessions
-        WHERE languageCode = :language AND testType != 'GROUP_QUIZ'
+        WHERE languageCode = :language AND book = :book AND testType != 'GROUP_QUIZ'
         ORDER BY createdAt DESC
         """
     )
-    fun observeHistory(language: String): Flow<List<TestSessionEntity>>
+    fun observeHistory(language: String, book: VocabBook): Flow<List<TestSessionEntity>>
 
-    @Query("SELECT * FROM test_sessions WHERE languageCode = :language AND testType = :testType AND sessionDate = :date ORDER BY createdAt DESC LIMIT 1")
-    suspend fun latestSession(language: String, testType: String, date: String): TestSessionEntity?
+    @Query("SELECT * FROM test_sessions WHERE languageCode = :language AND book = :book AND testType = :testType AND sessionDate = :date ORDER BY createdAt DESC LIMIT 1")
+    suspend fun latestSession(language: String, book: VocabBook, testType: String, date: String): TestSessionEntity?
 
     @Query("SELECT * FROM test_sessions WHERE dailyTaskId = :dailyTaskId AND testType = :testType ORDER BY createdAt DESC LIMIT 1")
     suspend fun latestForTask(dailyTaskId: String, testType: String): TestSessionEntity?
@@ -102,6 +103,24 @@ interface TestDao {
 
     @Query("DELETE FROM test_sessions")
     suspend fun deleteAllSessions()
+
+    @Query("DELETE FROM test_sessions WHERE id = :sessionId")
+    suspend fun deleteSession(sessionId: String)
+
+    @Query("DELETE FROM test_questions WHERE id = :questionId")
+    suspend fun deleteQuestion(questionId: String)
+
+    @Query("DELETE FROM test_questions WHERE sessionId = :sessionId")
+    suspend fun deleteQuestionsForSession(sessionId: String)
+
+    @Query(
+        "DELETE FROM test_questions WHERE sessionId = :sessionId " +
+            "AND vocabularyId = :vocabularyId AND isCorrect IS NULL"
+    )
+    suspend fun deleteUnansweredForVocabulary(sessionId: String, vocabularyId: String)
+
+    @Query("DELETE FROM test_questions WHERE sessionId NOT IN (SELECT id FROM test_sessions)")
+    suspend fun deleteOrphanQuestions()
 
     @Query("SELECT COUNT(*) FROM test_sessions WHERE status = 'COMPLETED' AND testType != 'GROUP_QUIZ'")
     fun observeCompletedTestCount(): Flow<Int>

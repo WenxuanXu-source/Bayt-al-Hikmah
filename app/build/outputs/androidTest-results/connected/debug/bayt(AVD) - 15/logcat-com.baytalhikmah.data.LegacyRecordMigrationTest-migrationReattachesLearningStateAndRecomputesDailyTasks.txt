@@ -1,0 +1,3 @@
+11-25 22:46:30.313  5834  5848 I TestRunner: started: migrationReattachesLearningStateAndRecomputesDailyTasks(com.baytalhikmah.data.LegacyRecordMigrationTest)
+11-25 22:46:30.409  5834  5854 I LegacyRecordMigrator: Re-attached 2 learning records for grc
+11-25 22:46:30.415  5834  5848 I TestRunner: finished: migrationReattachesLearningStateAndRecomputesDailyTasks(com.baytalhikmah.data.LegacyRecordMigrationTest)

@@ -42,6 +42,8 @@ data class TestSessionUiState(
     val feedback: AnswerFeedback? = null,
     val result: SessionResult? = null,
     val answering: Boolean = false,
+    val passing: Boolean = false,
+    val wordSaved: Boolean = false,
     val message: String? = null
 )
 
@@ -84,7 +86,8 @@ class TestSessionViewModel(
                 bundle = snapshot.bundle,
                 progress = snapshot.progress,
                 feedback = null,
-                result = result
+                result = result,
+                wordSaved = snapshot.bundle?.vocabulary?.id?.let { study.isSaved(it) } ?: false
             )
         }
     }
@@ -110,7 +113,8 @@ class TestSessionViewModel(
                     correct = outcome.correct,
                     result = outcome.result
                 ),
-                result = outcome.result
+                result = outcome.result,
+                wordSaved = outcome.answered.vocabularyId.let { study.isSaved(it) }
             )
         }
     }
@@ -148,8 +152,53 @@ class TestSessionViewModel(
                     secondaryCorrect = second.correct,
                     result = result
                 ),
-                result = result
+                result = result,
+                wordSaved = first.answered.vocabularyId.let { study.isSaved(it) }
             )
+        }
+    }
+
+    fun toggleSaved() {
+        val id = _uiState.value.bundle?.vocabulary?.id
+            ?: _uiState.value.feedback?.question?.vocabularyId
+            ?: return
+        viewModelScope.launch {
+            study.toggleSaved(id)
+            val saved = study.isSaved(id)
+            _uiState.value = _uiState.value.copy(wordSaved = saved)
+        }
+    }
+
+    fun pass() {
+        val state = _uiState.value
+        val feedback = state.feedback ?: return
+        if (!feedback.correct || state.passing) return
+        val vocabularyId = feedback.question.vocabularyId
+        _uiState.value = state.copy(passing = true)
+        viewModelScope.launch {
+            val outcome = study.passWord(sessionId, vocabularyId)
+            if (outcome == null) {
+                _uiState.value = _uiState.value.copy(
+                    passing = false,
+                    message = "This word cannot be passed from the current question."
+                )
+                return@launch
+            }
+            if (feedback.result != null || state.result != null) {
+                _uiState.value = _uiState.value.copy(
+                    passing = false,
+                    session = outcome.session,
+                    result = state.result ?: outcome.result,
+                    feedback = feedback.copy(result = state.result ?: outcome.result)
+                )
+                return@launch
+            }
+            _uiState.value = _uiState.value.copy(
+                passing = false,
+                session = outcome.session,
+                feedback = null
+            )
+            load()
         }
     }
 
@@ -174,6 +223,24 @@ class TestSessionViewModel(
         val next = state.feedback
         _uiState.value = state.copy(feedback = null, answering = false)
         if (next != null) load()
+    }
+
+    fun retakeReadingWords() {
+        val session = _uiState.value.session ?: return
+        viewModelScope.launch {
+            study.startReadingWordsTest(
+                session.languageCode,
+                session.vocabularyIds,
+                session.sessionDate
+            ).fold(
+                onSuccess = { id -> eventsChannel.send(TestSessionEvent.OpenSession(id)) },
+                onFailure = { error ->
+                    eventsChannel.send(
+                        TestSessionEvent.Message(error.message ?: "Unable to retake the test.")
+                    )
+                }
+            )
+        }
     }
 
     fun retakePreliminary() {

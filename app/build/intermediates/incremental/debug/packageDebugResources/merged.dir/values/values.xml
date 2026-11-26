@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#FAF4E6</color>
+    <color name="ic_launcher_dark_background">#0E221F</color>
+    <color name="ic_launcher_light_background">#FAF4E6</color>
+    <color name="ic_launcher_scholar_dark_background">#102018</color>
+    <color name="ic_launcher_scholar_light_background">#F8F0E0</color>
+    <color name="splash_background">#FBF9F4</color>
+    <string name="app_name">Bayt al-Hikmah</string>
+    <style name="Theme.BaytAlHikmah" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

@@ -9,5 +9,31 @@
       "code": "lat",
       "asset": "dictionary/latin.json"
     }
+  ],
+  "reading": [
+    {
+      "code": "grc",
+      "asset": "reading/herodotus.json"
+    },
+    {
+      "code": "grc",
+      "asset": "reading/anabasis.json"
+    },
+    {
+      "code": "lat",
+      "asset": "reading/caesar.json"
+    },
+    {
+      "code": "grc",
+      "asset": "reading/john.json"
+    },
+    {
+      "code": "lat",
+      "asset": "reading/confessions.json"
+    },
+    {
+      "code": "lat",
+      "asset": "reading/pliny.json"
+    }
   ]
 }

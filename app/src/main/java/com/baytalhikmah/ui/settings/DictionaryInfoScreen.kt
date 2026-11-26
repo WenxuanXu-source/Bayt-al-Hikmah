@@ -59,10 +59,10 @@ fun DictionaryInfoScreen(
 
         Column(Modifier.padding(20.dp)) {
             Text(
-                "Bayt al-Hikmah ships with a core Ancient Greek vocabulary based on Wilfred E. Major's 80% list and a " +
-                    "3,000-word Latin core assembled from frequency and pedagogical lists. Each entry has three constructed " +
-                    "examples drawn from the core vocabulary and, where available, authored paradigms. Install additional " +
-                    "vocabulary packs from Settings.",
+                "Bayt al-Hikmah ships three non-overlapping vocabulary books per language, selected from lemma " +
+                    "frequencies over the complete Loeb corpus: Basic to 85% coverage, Intermediate to 90%, and " +
+                    "Advanced to 95%. Basic and Intermediate entries carry English and native-language explanations " +
+                    "plus authentic passages with edition citations; Advanced is a reference list without examples.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

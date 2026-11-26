@@ -15,6 +15,7 @@ import com.baytalhikmah.data.local.LearningSessionEntity
 import com.baytalhikmah.data.local.TestSessionEntity
 import com.baytalhikmah.data.model.OverallStatus
 import com.baytalhikmah.data.model.TestType
+import com.baytalhikmah.data.model.VocabBook
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -31,6 +32,7 @@ data class HomeUiState(
     val loaded: Boolean = false,
     val languages: List<LanguageEntity> = emptyList(),
     val language: LanguageEntity? = null,
+    val book: VocabBook = VocabBook.BASIC,
     val task: DailyTaskEntity? = null,
     val learned: Int = 0,
     val total: Int = 0,
@@ -79,12 +81,13 @@ class HomeViewModel(
     val uiState = combine(selectedSettings, dateState) { value, date -> value to date }
         .flatMapLatest { (value, date) ->
             flow {
+                val book = value.bookFor(value.selectedLanguage)
                 study.ensureDailyTask(value.selectedLanguage, date)
                 val core = combine(
                     dictionary.observeLanguages(),
-                    study.observeDailyTask(value.selectedLanguage, date),
-                    dictionary.observeCount(value.selectedLanguage),
-                    study.observeLearnedCount(value.selectedLanguage),
+                    study.observeDailyTask(value.selectedLanguage, date, book),
+                    dictionary.observeBookCount(value.selectedLanguage, book),
+                    study.observeLearnedCount(value.selectedLanguage, book),
                     study.observeSavedCount(value.selectedLanguage)
                 ) { languages, task, total, learned, saved ->
                     HomeCore(languages, task, total, learned, saved)
@@ -92,8 +95,8 @@ class HomeViewModel(
                 emitAll(
                     combine(
                         core,
-                        study.observeUnfinishedSessions(value.selectedLanguage),
-                        study.observeInProgressTests(value.selectedLanguage)
+                        study.observeUnfinishedSessions(value.selectedLanguage, book),
+                        study.observeInProgressTests(value.selectedLanguage, book)
                     ) { c, unfinished, tests ->
                         val language = c.languages.firstOrNull { it.code == value.selectedLanguage }
                             ?: c.languages.firstOrNull()
@@ -107,6 +110,7 @@ class HomeViewModel(
                             loaded = true,
                             languages = c.languages,
                             language = language,
+                            book = book,
                             task = c.task,
                             learned = c.learned,
                             total = c.total,
@@ -139,6 +143,13 @@ class HomeViewModel(
     fun selectLanguage(code: String) {
         viewModelScope.launch {
             settings.setLanguage(code)
+            dateState.value = LocalDate.now().toString()
+        }
+    }
+
+    fun selectBook(book: VocabBook) {
+        viewModelScope.launch {
+            settings.setBook(uiState.value.languageCode, book)
             dateState.value = LocalDate.now().toString()
         }
     }

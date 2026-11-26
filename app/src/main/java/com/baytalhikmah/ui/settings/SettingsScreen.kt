@@ -3,8 +3,12 @@ package com.baytalhikmah.ui.settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -36,7 +41,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -123,19 +130,25 @@ fun SettingsScreen(
                     Hairline()
                     Spacer(Modifier.height(16.dp))
                     Text("App icon", style = MaterialTheme.typography.titleMedium)
-                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        "Pick the picture your launcher shows. The new icon appears on the home screen within a moment.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.height(14.dp))
                     Row(
                         Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
-                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
                         com.baytalhikmah.data.model.IconMode.entries.forEach { mode ->
-                            FilterChip(
+                            IconChoice(
+                                mode = mode,
                                 selected = settings.iconMode == mode,
-                                onClick = { viewModel.setIconMode(mode) },
-                                label = { Text(mode.label) }
+                                onClick = { viewModel.setIconMode(mode) }
                             )
                         }
                     }
+                    Spacer(Modifier.height(16.dp))
                     Spacer(Modifier.height(16.dp))
                     Hairline()
                     Spacer(Modifier.height(16.dp))
@@ -341,6 +354,34 @@ private fun DataAction(
         }
         Spacer(Modifier.width(10.dp))
         QuietButton(action, onClick)
+    }
+}
+
+@Composable
+private fun IconChoice(
+    mode: com.baytalhikmah.data.model.IconMode,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    val shape = RoundedCornerShape(16.dp)
+    Box(
+        modifier = Modifier
+            .size(62.dp)
+            .clip(shape)
+            .border(
+                width = if (selected) 2.5.dp else 1.dp,
+                color = if (selected) MaterialTheme.colorScheme.primary
+                else MaterialTheme.colorScheme.outlineVariant,
+                shape = shape
+            )
+            .clickable(onClick = onClick)
+    ) {
+        Image(
+            painter = painterResource(com.baytalhikmah.ui.IconArt.artwork(mode)),
+            contentDescription = "App icon option",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
     }
 }
 

@@ -89,9 +89,12 @@ Wenxuan Xu
 E-mail: <bunkenjo@gmail.com>  
 Website: <https://www.wenxuanxu.uk>
 
+## License
+
+The project is released under the **GNU General Public License v3.0 (GPL-3.0)**. See [LICENSE](LICENSE). Third-party dictionary and font data retain their own licences; see the in-app Dictionary information screen.
+
 ## Notes and limitations
 
 - Imported core forms and constructed examples are under continuous review; corrections are welcome.
 - Greek coverage is intentionally restricted to lemmas for which several reliable inflected forms could be sourced.
 - The bundled EB Garamond font is used under the SIL Open Font License 1.1.
-- Add an explicit `LICENSE` file before redistributing the code if you want to grant reuse rights to others.

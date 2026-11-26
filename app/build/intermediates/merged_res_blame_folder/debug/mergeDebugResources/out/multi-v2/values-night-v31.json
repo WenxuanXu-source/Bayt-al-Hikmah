@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.baytalhikmah.app-mergeDebugResources-61:/values-night-v31/values-night-v31.xml",
+            "map": [
+                {
+                    "source": "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/src/main/res/values-night-v31/themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "11",
+                        "endColumns": "12",
+                        "endOffsets": "796"
+                    }
+                }
+            ]
+        }
+    ]
+}

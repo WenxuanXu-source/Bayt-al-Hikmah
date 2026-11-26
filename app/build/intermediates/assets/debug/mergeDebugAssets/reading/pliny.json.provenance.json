@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "asset": "reading/pliny.json",
+  "assetSha256": "3f3db5d55c66a7d06a4e25ed8fc25018986e171217981035468f8283149e21e0",
+  "generator": "build_reading_packs.py 1",
+  "obtained_at": "2026-11-25",
+  "sources": [
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-01.json",
+      "sha256": "08604b31c76db84caaec88f7f93017a1a995817d56d261603f23e4f175269f99"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-02.json",
+      "sha256": "22879fa17273eb73b197125dbe6b0eb8c4258e96901039cf0813962f12296898"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-03.json",
+      "sha256": "a0f31904720bcac63a6c30b0bb86233be35383958fcf5e782c9b6e0bd408f313"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-04.json",
+      "sha256": "2c5a29720f7d1f679e19849191877136a4988c50b60c265a3c4a360ee3446fdd"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-05.json",
+      "sha256": "11b2f88b7047b55888842b317eea6a14a3629ca0bffd0c24dae9e2fa5849ab57"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-06.json",
+      "sha256": "c076c4b5cfaeefc252f1c86dc68ddab515182b4e6c1e561e7e910e60e5fb4e25"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-07.json",
+      "sha256": "f6db5689eae7b6be07036e85400746494bcd0d788b0ad5e3de079a04d215e0fc"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-08.json",
+      "sha256": "0e4c75290ce42e33ef2f4b1ee11d6499a74e29f92f5572f5b1811923c2bd2864"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-09.json",
+      "sha256": "12645fd29e59bbcb36307f0f0871ab59068725de36ebc219b0fd4a951ecb61b7"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-10.json",
+      "sha256": "413874b01814b31fa2d95b75d06e8370f4743d2c8876c815af6e243f6db87ab4"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-11.json",
+      "sha256": "6e41d61d4a8e304224778b12bcaea33508607eaf4e8f2fd5926af09fc1ffb2b2"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-12.json",
+      "sha256": "aec4ae7e5432510d8fccf32a9fcb66a6062a41452bb1d92b27f3d66ff6bbc8a5"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-13.json",
+      "sha256": "0d1c563d0eec7c7837bd6a91a48bea7d7ed84ef347452c2cddb85b418e5ee373"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-14.json",
+      "sha256": "5f82cb10ffe1436abf0beb948c67d90352e3afdbf1c82eae055287d61da8495c"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-15.json",
+      "sha256": "ef9b9e384605681f7595d099aeb84a87197c8542963457a6e173844998790d4e"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-16.json",
+      "sha256": "be53df101392353ac6132ed113b47e6c00c5aec0cdaa857dc755455a072c15ad"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-17.json",
+      "sha256": "6a74441fb98b4023a58a611ea89f649d3a83c16851fc062c56f62d466c9828ea"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-18.json",
+      "sha256": "caec1c4f25359929b9314ddbb9c877196bda4fc0eaa1d0bab6ca034e447930fb"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-19.json",
+      "sha256": "9b900d1c13039c62fbb4a73f0993ae1014593207537d389b034fea3c15bbb0be"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-20.json",
+      "sha256": "d9163351657912032128d3fcc3e6250a2d6bbf6e11b6dad749b0259aaf3a516b"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-21.json",
+      "sha256": "bb057cd0d683e03046e5e075aac12a628715cca8bd27f0be07d0a40c9eef4957"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-22.json",
+      "sha256": "210c02b999cbee9a6ffa9ed3431b18ffd4fa3eb1cdd5831c5808dfd61e28c64d"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-23.json",
+      "sha256": "5120cb908cd0036c66d2b31b0038a4705aa84d186203c2310287e369ff0927f5"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-24.json",
+      "sha256": "429b15add8e7920e9d1b5d830744fdabe7f2550e22c4b5a08e495fe85537a98d"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-25.json",
+      "sha256": "1c36758dd194a4e7c779d980fe9c9451e6c203d284f15b4672790ccad35996e9"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-26.json",
+      "sha256": "1a168b76f17c18bd7c7c630831fe36dbfe7da17b0b1db68f62e549c22b0c6849"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-27.json",
+      "sha256": "5fb4720a9f6695614a151734c7476b41a6c223efb0fbcfb52e96f47924160385"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-28.json",
+      "sha256": "7297f744b879fe661751ff3d256e206bdc67ced91cac61038f417a2ced53f75c"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-29.json",
+      "sha256": "725bd11e16ae8d9637e5236f18a0e7c063d432b5f52473b45213877b6d0ca4f0"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-30.json",
+      "sha256": "2dc2a1d22287891f88144f1f396e9bdcd4e79fb9a5ac06d2a9653e1c8ad8ff98"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-31.json",
+      "sha256": "c8284d6cf7925f5ccad03526873080c10c335388a27c94b811bb770dfcf66bca"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-32.json",
+      "sha256": "2d6a8f163011f933d1ab1ad6abf1e2ab6a6bd7bff1a171f371f9608adf8e9a19"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-33.json",
+      "sha256": "47332e398e91d3e3393611c988cbc3fb2eeaa10a92d3616d41e6dd2d50ee97c6"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-34.json",
+      "sha256": "7eed09def7f96d1e9a5ac8ec30320a6b0c44de16fb96902ceb72a3c29e756d99"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-35.json",
+      "sha256": "b37c72287e2ea8d58c5a951a9870f923c1fbf644bf6c495fd201e14c61ef902b"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-36.json",
+      "sha256": "9afcc6f0aad7fb629c2f65d040188442f5dcc57addf2418cba890f9b6707f769"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/pliny/book-37.json",
+      "sha256": "8461573ff117747e0dba4c8ec13af80cd599c51c4209edc055cb38f8f4a72053"
+    }
+  ],
+  "license": "Mayhoff 1906 Latin encoding CC BY-SA 4.0; Bostock-Riley 1855-57 translation public domain",
+  "method": "Mayhoff chapter units with the Bostock-Riley chapter translation",
+  "counts": {
+    "sections": 1065,
+    "books": 37,
+    "referenceWords": 42076
+  },
+  "installedBy": "install_reading_assets.py 1",
+  "languageCode": "lat",
+  "workId": "pliny",
+  "deduplicated": "Exact repeated halves of original or translation text were collapsed once; words and units are unchanged.",
+  "titleOriginal": "V2.3: work title shown as the original Latin title.",
+  "updated_at": "2026-11-26"
+}

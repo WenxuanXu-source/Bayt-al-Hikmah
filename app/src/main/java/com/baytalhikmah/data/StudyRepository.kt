@@ -15,6 +15,7 @@ import com.baytalhikmah.data.model.PreliminaryStatus
 import com.baytalhikmah.data.model.QuestionType
 import com.baytalhikmah.data.model.TestStatus
 import com.baytalhikmah.data.model.TestType
+import com.baytalhikmah.data.model.VocabBook
 import com.baytalhikmah.domain.QuestionFactory
 import com.baytalhikmah.domain.QuestionDraft
 import com.baytalhikmah.domain.VocabBundle
@@ -68,6 +69,11 @@ data class AnswerOutcome(
     val result: SessionResult?
 )
 
+data class PassOutcome(
+    val session: TestSessionEntity,
+    val result: SessionResult?
+)
+
 data class SessionResult(
     val session: TestSessionEntity,
     val language: LanguageEntity,
@@ -98,17 +104,27 @@ class StudyRepository(
 
     private fun today(): String = dateProvider.today().toString()
 
+    /**
+     * Which wordlist a reader is working through is user state, so a daily plan, a
+     * selection of new words and every progress count are scoped to it here instead
+     * of being threaded through the screens.
+     */
+    private suspend fun book(language: String): VocabBook =
+        settingsRepository.current().bookFor(language)
+
     // ---------------------------------------------------------------- daily state
 
     suspend fun ensureDailyTask(language: String, date: String = today()): DailyTaskEntity {
-        val learned = learningDao.learnedCount(language)
-        val existing = learningDao.dailyTask(language, date)
+        val book = book(language)
+        val learned = learningDao.learnedCount(language, book)
+        val existing = learningDao.dailyTask(language, date, book)
         if (existing == null) {
             val requiresReview = learned >= PRELIMINARY_MIN_WORDS
             val task = DailyTaskEntity(
-                id = taskId(language, date),
+                id = taskId(language, date, book),
                 languageCode = language,
                 learningDate = date,
+                book = book,
                 plannedNewWords = 0,
                 completedNewWords = 0,
                 preliminaryStatus = if (requiresReview) PreliminaryStatus.PENDING else PreliminaryStatus.NOT_REQUIRED,
@@ -147,21 +163,22 @@ class StudyRepository(
 
     suspend fun dailyState(languageCode: String, date: String = today()): DailyState? {
         val language = languageDao.get(languageCode) ?: return null
+        val book = book(languageCode)
         val task = ensureDailyTask(languageCode, date)
-        val session = learningDao.learningSessionForDate(languageCode, date)
+        val session = learningDao.learningSessionForDate(languageCode, date, book)
         val reconciled = session?.let { reconcileLearningSession(it) }
         return DailyState(
             language = language,
-            task = learningDao.dailyTask(languageCode, date) ?: task,
-            learnedCount = learningDao.learnedCount(languageCode),
-            totalCount = vocabularyDao.count(languageCode),
+            task = learningDao.dailyTask(languageCode, date, book) ?: task,
+            learnedCount = learningDao.learnedCount(languageCode, book),
+            totalCount = vocabularyDao.countBook(languageCode, book),
             savedCount = learningDao.savedCount(languageCode),
             session = reconciled,
             activeQuiz = reconciled?.activeQuizSessionId?.let { testDao.session(it) },
-            preliminarySession = testDao.latestSession(languageCode, TestType.PRELIMINARY.name, date),
+            preliminarySession = testDao.latestSession(languageCode, book, TestType.PRELIMINARY.name, date),
             postTestSession = testDao.latestForTask(task.id, TestType.POST_LEARNING.name)
-                ?: testDao.latestSession(languageCode, TestType.POST_LEARNING.name, date),
-            unfinishedPast = learningDao.unfinishedSessionsBefore(languageCode, date)
+                ?: testDao.latestSession(languageCode, book, TestType.POST_LEARNING.name, date),
+            unfinishedPast = learningDao.unfinishedSessionsBefore(languageCode, date, book)
         )
     }
 
@@ -178,7 +195,8 @@ class StudyRepository(
         val groupNumber = groupStart / 10 + 1
         val groupPosition = (session?.cardCursor ?: 0) - groupStart + 1
         val groupSize = (groupEnd - groupStart).coerceAtLeast(0)
-        val available = (state.totalCount - (state.learnedCount + learningDao.inProgressRecords(languageCode).size))
+        val available = (state.totalCount - (state.learnedCount +
+            learningDao.inProgressRecords(languageCode, state.task.book).size))
             .coerceAtLeast(0)
         return LearningState(
             daily = state,
@@ -195,16 +213,18 @@ class StudyRepository(
     suspend fun savedCountFor(language: String): Int = learningDao.savedCount(language)
 
     suspend fun statistics(language: String): LanguageStatistics {
-        val records = learningDao.records(language)
+        val book = book(language)
+        val records = learningDao.records(language, book)
         val learned = records.count { it.status == LearningStatus.LEARNED }
         val inProgress = records.count { it.status == LearningStatus.IN_PROGRESS }
         val difficult = records.count { it.difficult }
         val attempts = records.sumOf { it.totalAttempts }
         val correct = records.sumOf { it.correctAttempts }
-        val completedDays = learningDao.completedDailyTasks(language).size
+        val completedDays = learningDao.completedDailyTasks(language, book).size
         return LanguageStatistics(
             languageCode = language,
-            totalWords = vocabularyDao.count(language),
+            book = book.name,
+            totalWords = vocabularyDao.countBook(language, book),
             learned = learned,
             inProgress = inProgress,
             difficult = difficult,
@@ -216,7 +236,11 @@ class StudyRepository(
     }
 
     suspend fun recentDailyTasks(language: String, limit: Int = 14): List<DailyTaskEntity> =
-        learningDao.recentDailyTasks(language, limit)
+        learningDao.recentDailyTasks(language, book(language), limit)
+
+    /** Whole-dictionary count for views that are not scoped to one wordbook. */
+    suspend fun learnedTotal(language: String): Int =
+        learningDao.records(language).count { it.status == LearningStatus.LEARNED }
 
     suspend fun completedTestCount(): Int = testDao.observeCompletedTestCount().first()
 
@@ -224,7 +248,7 @@ class StudyRepository(
 
     suspend fun startPreliminaryTest(languageCode: String, date: String = today()): StartOutcome {
         val task = ensureDailyTask(languageCode, date)
-        val learned = learningDao.learnedRecords(languageCode)
+        val learned = learningDao.learnedRecords(languageCode, task.book)
         if (learned.size < PRELIMINARY_MIN_WORDS) {
             if (task.preliminaryStatus != PreliminaryStatus.NOT_REQUIRED) {
                 updateTask(task.id) { it.copy(preliminaryStatus = PreliminaryStatus.NOT_REQUIRED) }
@@ -267,20 +291,22 @@ class StudyRepository(
 
     suspend fun startLearning(languageCode: String, target: Int, date: String = today()): Result<String> {
         val task = ensureDailyTask(languageCode, date)
-        learningDao.learningSessionForDate(languageCode, date)?.let { return Result.success(it.id) }
-        val learned = learningDao.learnedCount(languageCode)
+        val book = task.book
+        learningDao.learningSessionForDate(languageCode, date, book)?.let { return Result.success(it.id) }
+        val learned = learningDao.learnedCount(languageCode, book)
         if (learned >= PRELIMINARY_MIN_WORDS && task.preliminaryStatus != PreliminaryStatus.PASSED) {
             return Result.failure(IllegalStateException("Pass the previous vocabulary test before learning new words."))
         }
         if (task.newLearningStatus == NewLearningStatus.COMPLETED) {
             return Result.failure(IllegalStateException("Today's new vocabulary is already complete."))
         }
-        val selected = dictionary.nextUnintroduced(languageCode, target)
+        val selected = dictionary.nextUnintroduced(languageCode, book, target)
         if (selected.isEmpty()) {
-            return Result.failure(IllegalStateException("No unlearned vocabulary remains in this dictionary."))
+            return Result.failure(IllegalStateException("No unlearned vocabulary remains in this wordbook."))
         }
         val language = languageDao.get(languageCode)
             ?: return Result.failure(IllegalStateException("Unknown language."))
+        val sessionId = learningSessionId(languageCode, date, book)
         database.withTransaction {
             selected.forEach { word ->
                 val current = learningDao.record(word.id)
@@ -303,9 +329,10 @@ class StudyRepository(
                 learningDao.upsertRecord(record)
             }
             val session = LearningSessionEntity(
-                id = learningSessionId(languageCode, date),
+                id = sessionId,
                 languageCode = languageCode,
                 learningDate = date,
+                book = book,
                 vocabularyIds = selected.map { it.id },
                 targetCount = selected.size,
                 cardCursor = 0,
@@ -328,7 +355,7 @@ class StudyRepository(
                 )
             }
         }
-        return Result.success(learningSessionId(languageCode, date))
+        return Result.success(sessionId)
     }
 
     suspend fun updateCardCursor(learningSessionId: String, index: Int) {
@@ -363,7 +390,7 @@ class StudyRepository(
         val groupWords = session.vocabularyIds.subList(groupStart, groupEnd)
         val quizWords = (groupWords + session.pendingQuizIds).distinct()
         return try {
-            val taskId = taskId(session.languageCode, session.learningDate)
+            val taskId = taskId(session.languageCode, session.learningDate, session.book)
             val quiz = createTestSession(
                 languageCode = session.languageCode,
                 type = TestType.GROUP_QUIZ,
@@ -387,9 +414,9 @@ class StudyRepository(
     }
 
     suspend fun ensurePostLearningTest(languageCode: String, date: String = today()): String? {
-        val session = learningDao.learningSessionForDate(languageCode, date) ?: return null
+        val session = learningDao.learningSessionForDate(languageCode, date, book(languageCode)) ?: return null
         if (session.phase != LearningPhase.COMPLETE) return null
-        val task = learningDao.dailyTask(languageCode, date) ?: return null
+        val task = learningDao.dailyTask(languageCode, date, session.book) ?: return null
         val existing = testDao.latestForTask(task.id, TestType.POST_LEARNING.name)
         if (existing != null) return existing.id
         return try {
@@ -420,7 +447,7 @@ class StudyRepository(
     // -------------------------------------------------------------------- tests
 
     suspend fun startRandomTest(languageCode: String, count: Int, date: String = today()): Result<String> {
-        val learned = learningDao.learnedRecords(languageCode).map { it.vocabularyId }
+        val learned = learningDao.learnedRecords(languageCode, book(languageCode)).map { it.vocabularyId }
         if (learned.size < 2) {
             return Result.failure(IllegalStateException("Learn at least two words before taking a random test."))
         }
@@ -435,6 +462,30 @@ class StudyRepository(
                 dailyTaskId = null,
                 learningSessionId = null,
                 threshold = null
+            )
+            Result.success(session.id)
+        } catch (error: IllegalStateException) {
+            Result.failure(IllegalStateException(error.message ?: "Unable to build the test."))
+        }
+    }
+
+    suspend fun startReadingWordsTest(
+        languageCode: String,
+        vocabularyIds: List<String>,
+        date: String = today()
+    ): Result<String> {
+        if (vocabularyIds.isEmpty()) {
+            return Result.failure(IllegalStateException("This section has no new words to test."))
+        }
+        return try {
+            val session = createTestSession(
+                languageCode = languageCode,
+                type = TestType.READING_WORDS,
+                vocabularyIds = vocabularyIds,
+                date = date,
+                dailyTaskId = null,
+                learningSessionId = null,
+                threshold = 60
             )
             Result.success(session.id)
         } catch (error: IllegalStateException) {
@@ -531,9 +582,11 @@ class StudyRepository(
         val score = if (total > 0) session.firstAttemptCorrect * 100.0 / total else 0.0
         val threshold = session.passingThreshold ?: settingsRepository.current().passingThreshold
         val isPreliminary = session.testType == TestType.PRELIMINARY
-        val passed = if (isPreliminary) score >= threshold else true
+        val isReadingWords = session.testType == TestType.READING_WORDS
+        val graded = isPreliminary || isReadingWords
+        val passed = if (graded) score >= threshold else true
         var updated = session.copy(
-            status = if (isPreliminary && !passed) TestStatus.FAILED else TestStatus.COMPLETED,
+            status = if (graded && !passed) TestStatus.FAILED else TestStatus.COMPLETED,
             scorePercent = score,
             passed = passed,
             completedAt = dateProvider.nowMillis()
@@ -571,10 +624,81 @@ class StudyRepository(
 
             TestType.GROUP_QUIZ -> completeLearningRound(updated)
 
+            TestType.READING_WORDS -> {
+                if (passed) markWordsMastered(session.vocabularyIds, session.sessionDate)
+            }
+
             TestType.RANDOM, TestType.SAVED_WORDS -> Unit
         }
         return updated
     }
+
+    private suspend fun markWordsMastered(ids: List<String>, date: String) {
+        if (ids.isEmpty()) return
+        val existing = learningDao.recordsForIds(ids).map { it.vocabularyId }.toSet()
+        learningDao.markMastered(ids, date)
+        val missing = ids.filterNot { it in existing }
+        if (missing.isNotEmpty()) {
+            val words = dictionary.bundles(missing).associateBy { it.vocabulary.id }
+            learningDao.upsertRecords(
+                missing.mapNotNull { id ->
+                    val word = words[id]?.vocabulary ?: return@mapNotNull null
+                    LearningRecordEntity(
+                        vocabularyId = id,
+                        languageCode = word.languageCode,
+                        status = LearningStatus.LEARNED,
+                        introducedOn = date,
+                        firstLearnedOn = date,
+                        lastReviewedOn = date,
+                        totalAttempts = 0,
+                        correctAttempts = 0,
+                        incorrectAttempts = 0,
+                        difficult = false,
+                        mastered = true
+                    )
+                }
+            )
+        }
+    }
+
+    /**
+     * "Pass" accepts a correctly answered word as familiar without asking its
+     * remaining questions. The word is marked mastered; only then are its
+     * unanswered questions removed so the test can advance.
+     */
+    suspend fun passWord(sessionId: String, vocabularyId: String): PassOutcome? =
+        database.withTransaction {
+            val session = testDao.session(sessionId) ?: return@withTransaction null
+            val questions = testDao.questions(sessionId)
+            val correct = questions.any { it.vocabularyId == vocabularyId && it.isCorrect == true }
+            if (!correct) return@withTransaction null
+
+            markWordsMastered(listOf(vocabularyId), session.sessionDate)
+            testDao.deleteUnansweredForVocabulary(sessionId, vocabularyId)
+
+            var updated = session
+            val result: SessionResult?
+            if (session.status != TestStatus.IN_PROGRESS) {
+                result = buildResult(session)
+            } else if (testDao.unansweredCount(sessionId) == 0) {
+                updated = finalizeSession(updated)
+                result = buildResult(updated)
+            } else {
+                var group = session.currentGroup
+                val groupHasUnanswered = testDao.questionsInGroup(sessionId, group)
+                    .any { it.selectedIndex == null }
+                if (!groupHasUnanswered) {
+                    group = testDao.firstUnansweredGroup(sessionId) ?: (group + 1)
+                    shuffleGroup(sessionId, group)
+                }
+                val groupAnswered = testDao.questionsInGroup(sessionId, group)
+                    .count { it.selectedIndex != null }
+                updated = updated.copy(currentGroup = group, currentQuestion = groupAnswered)
+                testDao.upsertSession(updated)
+                result = null
+            }
+            PassOutcome(updated, result)
+        }
 
     private suspend fun completeLearningRound(quiz: TestSessionEntity) {
         val learningSessionId = quiz.learningSessionId ?: return
@@ -594,7 +718,7 @@ class StudyRepository(
             quizRound = session.quizRound + 1,
             updatedAt = dateProvider.nowMillis()
         )
-        val task = learningDao.dailyTask(session.languageCode, session.learningDate)
+        val task = learningDao.dailyTask(session.languageCode, session.learningDate, session.book)
         if (task != null) {
             updateTask(task.id) {
                 it.copy(completedNewWords = passed.size, updatedAt = dateProvider.nowMillis())
@@ -641,7 +765,7 @@ class StudyRepository(
     }
 
     private suspend fun finishLearning(session: LearningSessionEntity) {
-        val task = learningDao.dailyTask(session.languageCode, session.learningDate) ?: return
+        val task = learningDao.dailyTask(session.languageCode, session.learningDate, session.book) ?: return
         ensurePostLearningSession(session, task)
         updateTask(task.id) {
             it.copy(
@@ -774,27 +898,35 @@ class StudyRepository(
 
     suspend fun session(sessionId: String): TestSessionEntity? = testDao.session(sessionId)
 
-    suspend fun inProgressTests(language: String): List<TestSessionEntity> = testDao.inProgress(language)
+    suspend fun inProgressTests(language: String, book: VocabBook) = testDao.inProgress(language, book)
 
-    fun observeDailyTask(language: String, date: String) = learningDao.observeDailyTask(language, date)
+    fun observeDailyTask(language: String, date: String, book: VocabBook) =
+        learningDao.observeDailyTask(language, date, book)
 
-    fun observeLearnedCount(language: String) = learningDao.observeLearnedCount(language)
+    fun observeLearnedCount(language: String, book: VocabBook) =
+        learningDao.observeLearnedCount(language, book)
 
     fun observeSavedCount(language: String) = learningDao.observeSavedCount(language)
 
-    fun observeDailyTasks(language: String) = learningDao.observeDailyTasks(language)
+    fun observeDailyTasks(language: String, book: VocabBook) = learningDao.observeDailyTasks(language, book)
 
-    fun observeUnfinishedSessions(language: String) = learningDao.observeUnfinishedSessions(language)
+    fun observeUnfinishedSessions(language: String, book: VocabBook) =
+        learningDao.observeUnfinishedSessions(language, book)
 
     fun observeLearningSession(learningSessionId: String) = learningDao.observeLearningSession(learningSessionId)
 
-    fun observeInProgressTests(language: String) = testDao.observeInProgress(language)
+    fun observeInProgressTests(language: String, book: VocabBook) = testDao.observeInProgress(language, book)
 
-    fun observeTestHistory(language: String) = testDao.observeHistory(language)
+    fun observeTestHistory(language: String, book: VocabBook) = testDao.observeHistory(language, book)
 
-    fun observeDailyTaskFlow(language: String, date: String) = learningDao.observeDailyTask(language, date)
+    fun observeDailyTaskFlow(language: String, date: String, book: VocabBook) =
+        learningDao.observeDailyTask(language, date, book)
 
     fun observeAllRecords(language: String) = learningDao.observeRecords(language)
+
+    suspend fun recordsForIds(ids: List<String>): List<LearningRecordEntity> =
+        if (ids.isEmpty()) emptyList()
+        else ids.chunked(400).flatMap { learningDao.recordsForIds(it) }
 
     fun observeCompletedTestCount() = testDao.observeCompletedTestCount()
 
@@ -883,6 +1015,8 @@ class StudyRepository(
             throw IllegalStateException("Some vocabulary entries are unavailable in the database.")
         }
         val byId = bundles.associateBy { it.vocabulary.id }
+        val book = bundles.map { it.vocabulary.book }.distinct().singleOrNull()
+            ?: settingsRepository.current().bookFor(languageCode)
         val pool = dictionary.distractorPool(languageCode)
         val factory = QuestionFactory(language.morphology, random)
         val sessionId = UUID.randomUUID().toString()
@@ -927,6 +1061,7 @@ class StudyRepository(
         val session = TestSessionEntity(
             id = sessionId,
             languageCode = languageCode,
+            book = book,
             testType = type,
             sessionDate = date,
             createdAt = dateProvider.nowMillis(),
@@ -964,9 +1099,10 @@ class StudyRepository(
         learningDao.upsertDailyTask(transform(task))
     }
 
-    private fun taskId(language: String, date: String) = "$language|$date"
+    private fun taskId(language: String, date: String, book: VocabBook) = "$language|$date|${book.code}"
 
-    private fun learningSessionId(language: String, date: String) = "$language|$date"
+    private fun learningSessionId(language: String, date: String, book: VocabBook) =
+        "$language|$date|${book.code}"
 
     private companion object {
         const val PRELIMINARY_MIN_WORDS = 30
@@ -985,6 +1121,7 @@ data class LearningState(
 
 data class LanguageStatistics(
     val languageCode: String,
+    val book: String,
     val totalWords: Int,
     val learned: Int,
     val inProgress: Int,

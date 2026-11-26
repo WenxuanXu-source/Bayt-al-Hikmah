@@ -1,5 +1,6 @@
 package com.baytalhikmah.ui.home
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,8 +18,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AutoStories
 import androidx.compose.material.icons.outlined.BookmarkBorder
 import androidx.compose.material.icons.outlined.ChevronRight
+import androidx.compose.material.icons.outlined.MenuBook
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHost
@@ -53,6 +56,7 @@ import com.baytalhikmah.ui.components.QuietButton
 import com.baytalhikmah.ui.components.SectionLabel
 import com.baytalhikmah.ui.components.StatusPill
 import com.baytalhikmah.ui.components.TaskRow
+import com.baytalhikmah.ui.components.VocabularyBookSelector
 import com.baytalhikmah.ui.components.Wordmark
 import com.baytalhikmah.ui.theme.BaytType
 import com.baytalhikmah.ui.theme.LocalBaytPalette
@@ -67,6 +71,7 @@ fun HomeScreen(
     onOpenSession: (String) -> Unit,
     onOpenTestTab: () -> Unit,
     onOpenSaved: () -> Unit,
+    onOpenReading: () -> Unit,
     viewModel: HomeViewModel = viewModel(factory = HomeViewModel.factory(container))
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -118,6 +123,34 @@ fun HomeScreen(
                         onSelect = viewModel::selectLanguage
                     )
                 }
+                Column(Modifier.padding(horizontal = 20.dp, vertical = 4.dp)) {
+                    SectionLabel("Mode")
+                    Spacer(Modifier.height(8.dp))
+                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        ModeCard(
+                            title = "Vocabulary",
+                            subtitle = "Word cards, quizzes and tests",
+                            selected = true,
+                            onClick = { },
+                            modifier = Modifier.weight(1f)
+                        )
+                        ModeCard(
+                            title = "Reading",
+                            subtitle = "Six texts, section by section",
+                            selected = false,
+                            onClick = onOpenReading,
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                    Spacer(Modifier.height(16.dp))
+                    SectionLabel("Vocabulary book")
+                    Spacer(Modifier.height(8.dp))
+                    VocabularyBookSelector(
+                        selected = state.book,
+                        onSelect = viewModel::selectBook
+                    )
+                }
+                Spacer(Modifier.height(12.dp))
                 Hairline()
 
                 Column(Modifier.padding(horizontal = 20.dp)) {
@@ -201,6 +234,44 @@ fun HomeScreen(
             hostState = snackbar,
             modifier = Modifier.align(Alignment.BottomCenter).padding(16.dp)
         )
+    }
+}
+
+@Composable
+private fun ModeCard(
+    title: String,
+    subtitle: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        modifier = modifier.clickable(onClick = onClick),
+        shape = RoundedCornerShape(6.dp),
+        color = if (selected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.55f)
+        else MaterialTheme.colorScheme.surface,
+        border = BorderStroke(
+            1.dp,
+            if (selected) MaterialTheme.colorScheme.primary else LocalBaytPalette.current.cardBorder
+        )
+    ) {
+        Column(Modifier.padding(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    if (title == "Reading") Icons.Outlined.MenuBook else Icons.Outlined.AutoStories,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(title, style = MaterialTheme.typography.titleMedium)
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                subtitle,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
 

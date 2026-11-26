@@ -66,6 +66,42 @@ class MorphologyTest {
     }
 
     @Test
+    fun infinitivesCarryNoPersonOrNumber() {
+        assertEquals(
+            "Present infinitive active",
+            morphology.labelFor(
+                Pos.VERB,
+                mapOf("tense" to "present", "mood" to "infinitive", "voice" to "active")
+            )
+        )
+    }
+
+    @Test
+    fun verbDistractorsAreValidAndNotClusteredByPersonOrMood() {
+        val correct = mapOf(
+            "person" to "third",
+            "number" to "singular",
+            "tense" to "present",
+            "mood" to "indicative",
+            "voice" to "active"
+        )
+        repeat(25) { seed ->
+            val distractors = morphology.distractorLabels(Pos.VERB, correct, 3, Random(seed))
+            assertTrue(distractors != null)
+            val labels = listOf("Third singular present indicative active") + distractors!!
+            assertTrue("Duplicate analyses", labels.toSet().size == 4)
+            assertTrue(
+                "An infinitive cannot carry person or number: $labels",
+                labels.none { it.contains("infinitive") && it.contains("singular") }
+            )
+            val third = labels.count { it.startsWith("Third ") }
+            val indicative = labels.count { it.endsWith("indicative active") }
+            assertTrue("Three options share a person: $labels", third <= 2)
+            assertTrue("Three options share a mood: $labels", indicative <= 2)
+        }
+    }
+
+    @Test
     fun distractorGenerationFailsWhenConfigurationIsTooSmall() {
         val tiny = Morphology(
             MorphologyConfig(

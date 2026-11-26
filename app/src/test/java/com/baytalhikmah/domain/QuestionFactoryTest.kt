@@ -6,6 +6,7 @@ import com.baytalhikmah.data.local.VocabularyEntity
 import com.baytalhikmah.data.model.MorphologyConfig
 import com.baytalhikmah.data.model.Pos
 import com.baytalhikmah.data.model.QuestionType
+import com.baytalhikmah.data.model.VocabBook
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -53,6 +54,7 @@ class QuestionFactoryTest {
         etymologyNote = null,
         sourceReference = null,
         frequencyRank = null,
+        book = VocabBook.BASIC,
         datasetVersion = 1
     )
 
@@ -191,6 +193,18 @@ class QuestionFactoryTest {
         assertFalse(context.prompt.contains(context.highlightText!!))
         assertTrue(context.prompt.contains("____"))
         assertEquals("ὁ ____ καλός ἐστιν.", context.prompt)
+    }
+
+    @Test
+    fun meaningOptionsDropTheEnglishLabel() {
+        val labelled = bundle(
+            "w7", "δῶρον", Pos.NOUN, listOf("English: gift", "Greek: δώρημα")
+        )
+        val factory = QuestionFactory(config, Random(9))
+        val question = factory.forGroupQuiz(listOf(labelled), pool + labelled)
+            .first()
+        assertTrue(question.options.none { it.startsWith("English:") })
+        assertEquals("gift", question.options[question.correctIndex])
     }
 
     @Test

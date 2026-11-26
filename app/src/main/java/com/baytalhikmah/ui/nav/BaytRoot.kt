@@ -38,6 +38,7 @@ import com.baytalhikmah.ui.components.Hairline
 import com.baytalhikmah.ui.home.HomeScreen
 import com.baytalhikmah.ui.learn.LearnScreen
 import com.baytalhikmah.ui.profile.ProfileScreen
+import com.baytalhikmah.ui.reading.ReadingScreen
 import com.baytalhikmah.ui.reference.ReferenceScreen
 import com.baytalhikmah.ui.saved.SavedWordsScreen
 import com.baytalhikmah.ui.settings.AboutScreen
@@ -57,6 +58,7 @@ object Routes {
     const val SESSION = "session/{sessionId}"
     const val WORD = "word/{vocabularyId}"
     const val SAVED = "saved"
+    const val READING = "reading"
     const val SETTINGS = "settings"
     const val DICTIONARY_INFO = "dictionary_info"
     const val ABOUT = "about"
@@ -105,7 +107,8 @@ fun BaytRoot(container: AppContainer) {
                     },
                     onOpenSession = { id -> navController.navigate("session/$id") },
                     onOpenTestTab = { navController.navigateMainTab(Routes.TEST) },
-                    onOpenSaved = { navController.navigate(Routes.SAVED) }
+                    onOpenSaved = { navController.navigate(Routes.SAVED) },
+                    onOpenReading = { navController.navigate(Routes.READING) }
                 )
             }
             composable(
@@ -172,6 +175,14 @@ fun BaytRoot(container: AppContainer) {
             }
             composable(Routes.SAVED) {
                 SavedWordsScreen(
+                    container = container,
+                    onBack = { navController.popBackStack() },
+                    onOpenWord = { id -> navController.navigate("word/$id") },
+                    onOpenSession = { id -> navController.navigate("session/$id") }
+                )
+            }
+            composable(Routes.READING) {
+                ReadingScreen(
                     container = container,
                     onBack = { navController.popBackStack() },
                     onOpenWord = { id -> navController.navigate("word/$id") },

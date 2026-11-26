@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.baytalhikmah.data.IconModeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-26T05:23:06" hostname="Vincentiuss-MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="the picker offers the two original pictures plus the new pair" classname="com.baytalhikmah.data.IconModeTest" time="0.0"/>
+  <testcase name="icon choices saved by older builds still resolve" classname="com.baytalhikmah.data.IconModeTest" time="0.0"/>
+  <testcase name="each variant owns a distinct launcher alias" classname="com.baytalhikmah.data.IconModeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

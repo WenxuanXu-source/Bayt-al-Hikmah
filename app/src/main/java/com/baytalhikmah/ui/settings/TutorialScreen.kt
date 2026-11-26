@@ -59,7 +59,7 @@ fun TutorialScreen(
             Column(Modifier.weight(1f)) {
                 Text("How to use Bayt al-Hikmah", style = MaterialTheme.typography.headlineLarge)
                 Text(
-                    "A short guide to the vocabulary workflow",
+                    "A short guide to the Vocabulary and Reading modes",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -72,8 +72,9 @@ fun TutorialScreen(
                     Text("What the app does", style = MaterialTheme.typography.titleMedium)
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        "Bayt al-Hikmah is an offline vocabulary trainer for Ancient Greek and Classical Latin. " +
-                            "It combines daily word cards, group quizzes, random tests, reference lookup, and saved words. " +
+                        "Bayt al-Hikmah is an offline vocabulary trainer and reader for Ancient Greek and Classical Latin. " +
+                            "Choose a language, then choose Vocabulary or Reading. Vocabulary combines daily word cards, " +
+                            "group quizzes and tests; Reading presents six original texts section by section. " +
                             "All progress stays on your device.",
                         style = MaterialTheme.typography.bodyMedium
                     )
@@ -85,11 +86,27 @@ fun TutorialScreen(
                     Text("A normal learning day", style = MaterialTheme.typography.titleMedium)
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        "1. Open Learn and choose today's target (10–50 words). Words are presented in random order.\n" +
-                            "2. Study each card: headword, meaning, forms, and three examples.\n" +
-                            "3. Complete the group quiz, then the post-learning test.\n" +
-                            "4. Finish with the daily review or an optional random test.\n" +
-                            "5. Use Reference to look up a word and Saved Words to build a personal test.",
+                        "1. Choose a language, then choose Vocabulary or Reading.\n" +
+                            "2. In Vocabulary, choose one of the three bands and open Learn. Study each card, complete " +
+                            "the group quiz, then the daily test.\n" +
+                            "3. Every test answer opens the word card. Use the bookmark to save the word; after a correct " +
+                            "answer, Pass marks the word familiar and skips its remaining questions.\n" +
+                            "4. In Reading, each work is listed under its own Greek or Latin title. Choose a work, a " +
+                            "book, and a section. Tap any word for its card and use Show translation when needed.\n" +
+                            "5. The two questions on a section ask about what the section says: its reasons, what it " +
+                            "says follows, what is done for a purpose, what it concedes or conditions, the numbers and " +
+                            "measures it gives, who speaks, what comes next, and what it does not say. They never ask " +
+                            "you to pick out a translation.\n" +
+                            "6. Each section has its own mark: Unread, Reading, or Finished. Opening a section makes it " +
+                            "Reading; its two-question reading test makes it Finished, and a book or work becomes " +
+                            "Finished automatically when every section is Finished.\n" +
+                            "7. The section's word list marks each Basic or Intermediate word as New or Familiar. " +
+                            "Familiar means you learned it and answered it correctly more than 60% of the time, or " +
+                            "you passed it explicitly. The word test covers every New word; passing marks them all " +
+                            "familiar.\n" +
+                            "8. Use Reference to look up a word and Saved Words to build a personal test.\n" +
+                            "9. Settings → Appearance holds the theme, the font size and the app icon. The app icon " +
+                            "row shows four pictures; tap the one you want and the launcher shows it after a moment.",
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }
@@ -100,10 +117,16 @@ fun TutorialScreen(
                     Text("What you are learning", style = MaterialTheme.typography.titleMedium)
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        "The Greek core follows Wilfred E. Major's 80% vocabulary list and high-frequency LXX/New Testament lemmas. " +
-                            "The Latin core combines Diederich's frequency study, the DCC core list, pedagogical lists, and Lewis & Short. " +
-                            "Examples are constructed from the core vocabulary; every inflectable word carries several case/number or tense/voice forms. " +
-                            "Dictionary sources, licences, and coverage are listed under Profile → Dictionary information.",
+                        "Each language has three non-overlapping frequency bands: Basic covers the highest-frequency " +
+                            "vocabulary to 85% of the Loeb corpus, Intermediate adds the 85–90% band, and Advanced adds " +
+                            "the 90–95% band. Basic and Intermediate cards show short cited passages from cleared " +
+                            "editions, and give English plus Greek or Latin explanations where a compatible source " +
+                            "supplies one. Reading questions test understanding of the section itself, not recognition " +
+                            "of a translation: passage, correct answer and wrong answers are all verbatim sentences " +
+                            "taken from the cleared text of that work, and the wrong answers come from other sections " +
+                            "of the same work, so nothing is paraphrased or generated. The six works are titled in " +
+                            "Greek or Latin, as their authors titled them. Dictionary sources, licences, " +
+                            "and coverage are listed under Profile → Dictionary information.",
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }

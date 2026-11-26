@@ -2,6 +2,7 @@ package com.baytalhikmah.ui.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -40,6 +41,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.baytalhikmah.data.local.LanguageEntity
+import com.baytalhikmah.data.model.VocabBook
 import com.baytalhikmah.ui.theme.BaytType
 import com.baytalhikmah.ui.theme.LocalBaytPalette
 
@@ -225,6 +227,67 @@ fun LanguageSelector(
                         onSelect(language.code)
                     }
                 )
+            }
+        }
+    }
+}
+
+@Composable
+fun VocabularyBookSelector(
+    selected: VocabBook,
+    onSelect: (VocabBook) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(6.dp)
+    ) {
+        VocabBook.entries.forEach { book ->
+            val active = book == selected
+            Surface(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onSelect(book) },
+                shape = RoundedCornerShape(6.dp),
+                color = if (active) {
+                    MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.55f)
+                } else {
+                    Color.Transparent
+                },
+                border = BorderStroke(
+                    1.dp,
+                    if (active) MaterialTheme.colorScheme.primary else LocalBaytPalette.current.cardBorder
+                )
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 9.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(
+                            text = book.label,
+                            style = MaterialTheme.typography.titleSmall,
+                            color = if (active) {
+                                MaterialTheme.colorScheme.primary
+                            } else {
+                                MaterialTheme.colorScheme.onSurface
+                            }
+                        )
+                        Text(
+                            text = book.coverage,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    if (active) {
+                        Icon(
+                            Icons.Filled.Check,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
             }
         }
     }

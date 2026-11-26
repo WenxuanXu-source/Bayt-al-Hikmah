@@ -41,7 +41,7 @@ class DictionaryInfoViewModel(
                 DictionaryInfoEntry(
                     language = language,
                     installedEntries = dictionary.count(language.code),
-                    learned = study.statistics(language.code).learned
+                    learned = study.learnedTotal(language.code)
                 )
             }
             _uiState.value = DictionaryInfoUiState(loaded = true, entries = entries)

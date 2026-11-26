@@ -1,0 +1,3 @@
+com.baytalhikmah.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

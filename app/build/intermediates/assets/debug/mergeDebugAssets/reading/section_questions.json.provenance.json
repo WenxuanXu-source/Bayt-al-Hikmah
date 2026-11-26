@@ -1,0 +1,84 @@
+{
+ "schemaVersion": 1,
+ "asset": "reading/section_questions.json",
+ "assetSha256": "e4ba7ed7aaa649d63caa3c59cbaf8f17ea92135ea472cccb973f53ab4c2654e4",
+ "generated_at": "2026-11-26",
+ "obtained_at": "2026-11-26",
+ "generator": "merge_reading_assets.py 1",
+ "source": [
+  "section_questions.grc.json",
+  "section_questions.lat.json"
+ ],
+ "license": "Derived only from the cleared reading packs. SBLGNT is CC BY 4.0; ASV, Godley, Brownson, Edwards, Pusey and Bostock-Riley are public domain; CSEL 33 and Mayhoff (1906) encodings are CC BY-SA 4.0.",
+ "upstream_revision": {
+  "generatedBy": "reading_comprehension_assets.py",
+  "sources": [
+   "section_questions.grc.json",
+   "section_questions.lat.json"
+  ]
+ },
+ "counts": {
+  "sections": 5803,
+  "questions": 12270,
+  "minPerSection": 2,
+  "maxPerSection": 3,
+  "kinds": {
+   "not_said": 3543,
+   "next": 2305,
+   "occurrence": 778,
+   "name": 583,
+   "condition": 535,
+   "cause": 1091,
+   "purpose": 841,
+   "speaker": 90,
+   "quantity": 381,
+   "contrast": 926,
+   "result": 245,
+   "concede": 379,
+   "gist": 573
+  },
+  "byLanguage": {
+   "grc": {
+    "sections": 3886,
+    "questions": 7817,
+    "minPerSection": 2,
+    "maxPerSection": 3,
+    "kinds": {
+     "not_said": 2740,
+     "next": 2002,
+     "occurrence": 776,
+     "name": 579,
+     "condition": 182,
+     "cause": 474,
+     "purpose": 344,
+     "speaker": 90,
+     "quantity": 159,
+     "contrast": 380,
+     "result": 28,
+     "concede": 63
+    }
+   },
+   "lat": {
+    "sections": 1917,
+    "questions": 4453,
+    "minPerSection": 2,
+    "maxPerSection": 3,
+    "kinds": {
+     "cause": 617,
+     "result": 217,
+     "purpose": 497,
+     "contrast": 546,
+     "gist": 573,
+     "not_said": 803,
+     "quantity": 222,
+     "condition": 353,
+     "concede": 316,
+     "next": 303,
+     "name": 4,
+     "occurrence": 2
+    }
+   }
+  }
+ },
+ "method": "Each section is questioned about its content: the reason it gives, what it says follows, what is done for a stated purpose, what it concedes, what it conditions, who speaks, what quantity is meant, what the section is about, what it states next, and what it does not state. Passages, answers and distractors are verbatim spans of the cleared packs, so every option is real prose from this work and only one option belongs to this section. Nothing is paraphrased, machine-translated or invented, and no question offers competing translations of a passage."
+}

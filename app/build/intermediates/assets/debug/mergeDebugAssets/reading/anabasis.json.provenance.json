@@ -1,0 +1,23 @@
+{
+  "source": "Perseus Digital Library, Xenophon, Anabasis, Greek text and Carleton L. Brownson translation",
+  "license": "Greek text Perseus encoding CC BY-SA 4.0; Brownson (1922) translation public domain",
+  "edition": "Perseus Digital Library (grc2/eng2), Brownson (1922)",
+  "obtained_at": "2026-11-25",
+  "asset": "reading/anabasis.json",
+  "assetSha256": "b4aebbe58b1ca4b21032298bb93d73eb9f2970616657fa4dd0472af330965ef7",
+  "installedBy": "rebuild_anabasis.py 1",
+  "languageCode": "grc",
+  "workId": "anabasis",
+  "method": "Perseus book/chapter/section divisions; Greek and English sections paired by the same canonical key",
+  "counts": {
+    "sections": 1469,
+    "books": 7,
+    "referenceWords": 4074
+  },
+  "upstream_revision": {
+    "grc2": "828fc2be2050a451f1a003f0403f83d9347f500bf95e625c8a4d8af6e5e8a876",
+    "eng2": "504980fa84770313518888b1dc20947cdf87d2bfabe00e7a3238d419e98f13c2"
+  },
+  "titleOriginal": "V2.3: work title shown as the original Greek title.",
+  "updated_at": "2026-11-26"
+}

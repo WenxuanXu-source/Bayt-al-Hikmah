@@ -1,0 +1,2 @@
+11-25 22:46:30.416  5834  5848 I TestRunner: started: readingProgressStartsReadingAndOnlyFinishesOnAPerfectAttempt(com.baytalhikmah.data.LegacyRecordMigrationTest)
+11-25 22:46:30.423  5834  5848 I TestRunner: finished: readingProgressStartsReadingAndOnlyFinishesOnAPerfectAttempt(com.baytalhikmah.data.LegacyRecordMigrationTest)

@@ -171,11 +171,13 @@ private fun QuestionView(
         if (progress != null) {
             Column(Modifier.padding(horizontal = 20.dp, vertical = 12.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
+                    val questionNumber = if (locked) progress.answered.coerceAtLeast(1)
+                    else progress.answered + 1
                     Text(
                         if (state.session?.testType == TestType.GROUP_QUIZ) {
-                            "Group quiz · Question ${progress.answered + 1} of ${progress.totalQuestions}"
+                            "Group quiz · Question $questionNumber of ${progress.totalQuestions}"
                         } else {
-                            "Group ${progress.groupNumber} · Question ${progress.answered + 1} of ${progress.totalQuestions}"
+                            "Group ${progress.groupNumber} · Question $questionNumber of ${progress.totalQuestions}"
                         },
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -269,17 +271,33 @@ private fun QuestionView(
                     style = MaterialTheme.typography.titleMedium,
                     color = if (combinedCorrect) palette.success else MaterialTheme.colorScheme.error
                 )
-                if (!combinedCorrect && state.bundle != null) {
+                if (state.bundle != null) {
                     Spacer(Modifier.height(12.dp))
                     HairlineCard {
                         VocabularyCard(
                             bundle = state.bundle,
                             language = language,
-                            saved = false,
+                            saved = state.wordSaved,
                             difficult = false,
-                            startExpanded = true
+                            startExpanded = true,
+                            onToggleSaved = viewModel::toggleSaved
                         )
                     }
+                }
+                if (combinedCorrect) {
+                    Spacer(Modifier.height(12.dp))
+                    QuietButton(
+                        text = if (state.passing) "Passing…" else "Pass — mark this word familiar",
+                        onClick = viewModel::pass,
+                        enabled = !state.passing,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    Text(
+                        "Pass skips this word's remaining questions and marks it familiar.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
                 }
                 Spacer(Modifier.height(18.dp))
                 PrimaryButton(
@@ -495,11 +513,14 @@ private fun ResultView(state: TestSessionUiState, viewModel: TestSessionViewMode
     val session = result.session
     val palette = LocalBaytPalette.current
     val isPreliminary = session.testType == TestType.PRELIMINARY
+    val isReadingWords = session.testType == TestType.READING_WORDS
     val passed = session.status == TestStatus.COMPLETED
     val title = when {
         session.testType == TestType.GROUP_QUIZ -> "Group complete"
         isPreliminary && passed -> "Review passed"
         isPreliminary && !passed -> "Review not passed"
+        isReadingWords && passed -> "Words passed"
+        isReadingWords && !passed -> "Words not passed"
         session.testType == TestType.POST_LEARNING -> "Daily test complete"
         else -> "Test complete"
     }
@@ -516,6 +537,10 @@ private fun ResultView(state: TestSessionUiState, viewModel: TestSessionViewMode
                     "You may now begin the new vocabulary session for this date."
                 isPreliminary && !passed ->
                     "A score of ${session.passingThreshold ?: 80}% on first attempts is required. Review the missed words below, then retake the test."
+                isReadingWords && passed ->
+                    "Every word in this reading test is now marked familiar."
+                isReadingWords && !passed ->
+                    "A score of ${session.passingThreshold ?: 60}% on first attempts is required to mark these words familiar."
                 session.testType == TestType.POST_LEARNING ->
                     "All of this date's new words have been tested, and your learning records have been updated."
                 else ->
@@ -570,7 +595,15 @@ private fun ResultView(state: TestSessionUiState, viewModel: TestSessionViewMode
             }
         }
         Spacer(Modifier.height(16.dp))
-        if (isPreliminary && !passed) {
+        if (isReadingWords && !passed) {
+            PrimaryButton(
+                text = "Retake this word test",
+                onClick = viewModel::retakeReadingWords,
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(Modifier.height(10.dp))
+            QuietButton("Back", viewModel::close, modifier = Modifier.fillMaxWidth())
+        } else if (isPreliminary && !passed) {
             PrimaryButton(
                 text = "Retake the review test",
                 onClick = viewModel::retakePreliminary,

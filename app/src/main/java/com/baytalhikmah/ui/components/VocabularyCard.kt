@@ -113,6 +113,14 @@ fun VocabularyCard(
                     color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(Modifier.height(4.dp))
+                vocabulary.frequencyRank?.let { rank ->
+                    Text(
+                        text = "Frequency rank #$rank",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Spacer(Modifier.height(4.dp))
+                }
                 Text(
                     text = buildString {
                         append(vocabulary.pos.label)

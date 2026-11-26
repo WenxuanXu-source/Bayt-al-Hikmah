@@ -61,14 +61,13 @@ class QuestionFactory(
 
     private fun semanticQuestion(bundle: VocabBundle, pool: List<VocabBundle>): QuestionDraft? {
         val vocab = bundle.vocabulary
-        val correct = vocab.definitions.firstOrNull()?.trim().orEmpty()
-        if (correct.isEmpty()) return null
+        val correct = meaningOption(vocab.definitions.firstOrNull()) ?: return null
         val samePos = pool.asSequence()
             .filter { it.vocabulary.id != vocab.id && it.vocabulary.pos == vocab.pos }
-            .mapNotNull { it.vocabulary.definitions.firstOrNull()?.trim() }
+            .mapNotNull { meaningOption(it.vocabulary.definitions.firstOrNull()) }
         val others = pool.asSequence()
             .filter { it.vocabulary.id != vocab.id }
-            .mapNotNull { it.vocabulary.definitions.firstOrNull()?.trim() }
+            .mapNotNull { meaningOption(it.vocabulary.definitions.firstOrNull()) }
         val distractors = pickDistinct(correct, samePos + others, 3) ?: return null
         val options = (distractors + correct).shuffled(random)
         return QuestionDraft(
@@ -200,14 +199,13 @@ class QuestionFactory(
 
     private fun formMeaningQuestion(bundle: VocabBundle, form: String, pool: List<VocabBundle>): QuestionDraft? {
         val vocab = bundle.vocabulary
-        val correct = vocab.definitions.firstOrNull()?.trim().orEmpty()
-        if (correct.isEmpty()) return null
+        val correct = meaningOption(vocab.definitions.firstOrNull()) ?: return null
         val samePos = pool.asSequence()
             .filter { it.vocabulary.id != vocab.id && it.vocabulary.pos == vocab.pos }
-            .mapNotNull { it.vocabulary.definitions.firstOrNull()?.trim() }
+            .mapNotNull { meaningOption(it.vocabulary.definitions.firstOrNull()) }
         val others = pool.asSequence()
             .filter { it.vocabulary.id != vocab.id }
-            .mapNotNull { it.vocabulary.definitions.firstOrNull()?.trim() }
+            .mapNotNull { meaningOption(it.vocabulary.definitions.firstOrNull()) }
         val distractors = pickDistinct(correct, samePos + others, 3) ?: return null
         val options = (distractors + correct).shuffled(random)
         return QuestionDraft(
@@ -240,6 +238,12 @@ class QuestionFactory(
         if (SearchNormalizer.normalize(bundle.vocabulary.headword) in sentenceTokens) return true
         return bundle.forms.any { SearchNormalizer.normalize(it.writtenForm) in sentenceTokens }
     }
+
+    private fun meaningOption(definition: String?): String? =
+        definition?.trim()
+            ?.removePrefix("English: ")
+            ?.trim()
+            ?.takeIf { it.isNotEmpty() }
 
     private fun pickDistinct(correct: String, candidates: Sequence<String>, count: Int): List<String>? {
         val seen = linkedSetOf(correct.lowercase().trim())

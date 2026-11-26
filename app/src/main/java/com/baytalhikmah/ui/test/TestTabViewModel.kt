@@ -44,12 +44,13 @@ class TestTabViewModel(
     val events = eventsChannel.receiveAsFlow()
 
     val uiState = settings.settings.flatMapLatest { userSettings ->
+        val book = userSettings.bookFor(userSettings.selectedLanguage)
         combine(
             dictionary.observeLanguages(),
-            study.observeLearnedCount(userSettings.selectedLanguage),
+            study.observeLearnedCount(userSettings.selectedLanguage, book),
             study.observeSavedCount(userSettings.selectedLanguage),
-            study.observeTestHistory(userSettings.selectedLanguage),
-            study.observeInProgressTests(userSettings.selectedLanguage)
+            study.observeTestHistory(userSettings.selectedLanguage, book),
+            study.observeInProgressTests(userSettings.selectedLanguage, book)
         ) { languages, learned, saved, history, active ->
             TestTabUiState(
                 loaded = true,

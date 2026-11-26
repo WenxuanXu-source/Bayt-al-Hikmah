@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.baytalhikmah.domain.SearchNormalizerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-26T05:23:06" hostname="Vincentiuss-MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="treatsPunctuationAsSeparatorAndBuildsTokens" classname="com.baytalhikmah.domain.SearchNormalizerTest" time="0.001"/>
+  <testcase name="containsTokenRequiresWholeToken" classname="com.baytalhikmah.domain.SearchNormalizerTest" time="0.0"/>
+  <testcase name="foldsGreekPolytonicMarksForSearch" classname="com.baytalhikmah.domain.SearchNormalizerTest" time="0.0"/>
+  <testcase name="foldsFinalSigmaAndLatinMacrons" classname="com.baytalhikmah.domain.SearchNormalizerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

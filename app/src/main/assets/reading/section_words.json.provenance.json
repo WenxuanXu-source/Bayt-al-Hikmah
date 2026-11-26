@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "asset": "reading/section_words.json",
+ "assetSha256": "83901caae579af68f19449e655fd1cd3cedb3940ed08209648643d74669c6714",
+ "generated_at": "2026-11-26",
+ "obtained_at": "2026-11-26",
+ "generator": "merge_reading_assets.py 1",
+ "source": [
+  "section_words.grc.json",
+  "section_words.lat.json"
+ ],
+ "license": "Derived only from the cleared reading packs. SBLGNT is CC BY 4.0; ASV, Godley, Brownson, Edwards, Pusey and Bostock-Riley are public domain; CSEL 33 and Mayhoff (1906) encodings are CC BY-SA 4.0.",
+ "upstream_revision": {
+  "generatedBy": "reading_comprehension_assets.py",
+  "sources": [
+   "section_words.grc.json",
+   "section_words.lat.json"
+  ]
+ },
+ "counts": {
+  "sections": 5803,
+  "sectionsWithWords": 5803,
+  "words": 6977,
+  "tokens": 428364,
+  "byLanguage": {
+   "grc": {
+    "sections": 3886,
+    "sectionsWithWords": 3886,
+    "words": 3224,
+    "tokens": 172690
+   },
+   "lat": {
+    "sections": 1917,
+    "sectionsWithWords": 1917,
+    "words": 3753,
+    "tokens": 255674
+   }
+  }
+ },
+ "method": "Every surface token of each cleared reading section is normalised with the corpus token key and mapped through the complete form index to the Basic and Intermediate wordbooks. Advanced entries are excluded."
+}

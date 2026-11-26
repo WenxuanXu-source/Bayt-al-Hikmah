@@ -13,6 +13,8 @@ class AppContainer(private val context: Context) {
     val settingsRepository = SettingsRepository(context)
     val studyRepository = StudyRepository(database, dictionaryRepository, settingsRepository, SystemDateProvider)
     val referenceRepository = ReferenceRepository(context)
+    val readingQuestionRepository = ReadingQuestionRepository(context)
+    val readingWordIndexRepository = ReadingWordIndexRepository(context)
     val backupManager = BackupManager(context, database, settingsRepository, SystemDateProvider)
     val datasetService = DatasetService(context, database)
     private val seeder = DatabaseSeeder(context, database)

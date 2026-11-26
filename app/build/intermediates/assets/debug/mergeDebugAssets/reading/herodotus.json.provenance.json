@@ -1,0 +1,40 @@
+{
+  "source": "Loeb Classical Library volumes 117, 118, 119, 120 (ABBYY Lingvo DSL export of the Loeb corpus supplied by the project author); text extracted by bayt-v21/src/loeb_text.py",
+  "license": "public domain",
+  "edition": "Loeb Classical Library 117-120, translated by A. D. Godley (1920)",
+  "obtained_at": "2026-11-24",
+  "upstream_revision": {
+    "LCL 117": "33ef55976ca8d99be0a5ad03b7b5c4e936491107284d56b7e6e5596233d80a6c",
+    "LCL 118": "d012e33259541add14eac89ead9b2f96cefda6b8887eff75e50aa48230f8337b",
+    "LCL 119": "fb0d7f7f36883397364250cc7439fd8434149a91ad970f9bfd6f86ef4fb5554e",
+    "LCL 120": "9c89cd1eeee092f5c133c6c0032ae87a9e7a0ca531e8539d8a59ac998bc91543"
+  },
+  "method": "one reading unit per printed division; division numbers are the edition's own, read from its inline [c dimgray] marks and the book carried on each article's index key",
+  "units": 1539,
+  "books": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "words": 186519,
+  "with_translation": 1539,
+  "asset": "reading/herodotus.json",
+  "assetSha256": "769cc336517acb548e367e666a2df0b589ec9de55910ada810a31f9e006ed432",
+  "installedBy": "install_reading_assets.py 1",
+  "languageCode": "grc",
+  "workId": "herodotus",
+  "counts": {
+    "sections": 1539,
+    "books": 9,
+    "referenceWords": 15956
+  },
+  "deduplicated": "Exact repeated halves of original or translation text were collapsed once; words and units are unchanged.",
+  "titleOriginal": "V2.3: work title shown as the original Greek title.",
+  "updated_at": "2026-11-26"
+}

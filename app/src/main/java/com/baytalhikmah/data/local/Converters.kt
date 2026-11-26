@@ -11,8 +11,10 @@ import com.baytalhikmah.data.model.Pos
 import com.baytalhikmah.data.model.PostTestStatus
 import com.baytalhikmah.data.model.PreliminaryStatus
 import com.baytalhikmah.data.model.QuestionType
+import com.baytalhikmah.data.model.ReadingStatus
 import com.baytalhikmah.data.model.TestStatus
 import com.baytalhikmah.data.model.TestType
+import com.baytalhikmah.data.model.VocabBook
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.MapSerializer
 import kotlinx.serialization.builtins.serializer
@@ -121,4 +123,17 @@ class Converters {
     @TypeConverter
     fun stringToLearningPhase(value: String): LearningPhase =
         LearningPhase.entries.firstOrNull { it.name == value } ?: LearningPhase.CARDS
+
+    @TypeConverter
+    fun vocabBookToString(value: VocabBook): String = value.name
+
+    @TypeConverter
+    fun stringToVocabBook(value: String): VocabBook = VocabBook.from(value)
+
+    @TypeConverter
+    fun readingStatusToString(value: ReadingStatus): String = value.name
+
+    @TypeConverter
+    fun stringToReadingStatus(value: String): ReadingStatus =
+        ReadingStatus.entries.firstOrNull { it.name == value } ?: ReadingStatus.UNREAD
 }

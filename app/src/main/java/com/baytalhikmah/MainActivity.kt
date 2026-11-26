@@ -84,10 +84,7 @@ private fun LoadingScreen(iconMode: com.baytalhikmah.data.model.IconMode) {
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter = painterResource(
-                    if (iconMode == com.baytalhikmah.data.model.IconMode.DARK) R.drawable.splash_icon_dark
-                    else R.drawable.splash_icon_light
-                ),
+                painter = painterResource(com.baytalhikmah.ui.IconArt.artwork(iconMode)),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -106,7 +103,7 @@ private fun LoadingScreen(iconMode: com.baytalhikmah.data.model.IconMode) {
             Spacer(Modifier.height(8.dp))
             AnimatedVisibility(visible = showVersion, enter = fadeIn(tween(700))) {
                 Text(
-                    text = "V1.2 Dogfood Version",
+                    text = "V2.3",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center

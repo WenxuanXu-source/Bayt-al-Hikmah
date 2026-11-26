@@ -34,6 +34,7 @@ data class EntryDto(
     val headword: String,
     val pos: String = "OTHER",
     val gender: String? = null,
+    val book: String = "basic",
     val definitions: List<String> = emptyList(),
     val grammaticalClass: String = "",
     val inflectionType: String = "",
@@ -62,13 +63,15 @@ data class ExampleDto(
     val work: String? = null,
     val passage: String? = null,
     val authentic: Boolean = false,
-    val targetForm: String? = null
+    val targetForm: String? = null,
+    val targetDimensions: Map<String, String> = emptyMap()
 )
 
 @Serializable
 data class DatasetManifest(
     val schemaVersion: Int = 1,
-    val languages: List<ManifestLanguage> = emptyList()
+    val languages: List<ManifestLanguage> = emptyList(),
+    val reading: List<ManifestLanguage> = emptyList()
 )
 
 @Serializable
@@ -92,4 +95,48 @@ data class ReferenceTable(
     val note: String = "",
     val columns: List<String>,
     val rows: List<List<String>>
+)
+
+/**
+ * Reading material shipped as an asset pack: one file per work keeps the JSON
+ * readable and lets the seeder intern vocabulary per work instead of holding a
+ * token table for half a million words.
+ */
+@Serializable
+data class ReadingPack(
+    val schemaVersion: Int = 1,
+    val languageCode: String,
+    val work: ReadingWorkDto = ReadingWorkDto()
+)
+
+@Serializable
+data class ReadingWorkDto(
+    val id: String = "",
+    val author: String = "",
+    val title: String = "",
+    val summary: String = "",
+    val textSource: String = "",
+    val translationSource: String = "",
+    val newWords: List<ReadingLexemeDto> = emptyList(),
+    val sections: List<ReadingSectionDto> = emptyList()
+)
+
+@Serializable
+data class ReadingLexemeDto(
+    val surface: String = "",
+    val lemma: String = "",
+    val pos: String = "",
+    val gloss: String = ""
+)
+
+@Serializable
+data class ReadingSectionDto(
+    val bookNumber: Int = 1,
+    val bookLabel: String = "",
+    val sectionLabel: String = "",
+    val heading: String = "",
+    val originalText: String = "",
+    val translationText: String = "",
+    /** Surface forms this paragraph introduces, interned per work at seed time. */
+    val newWords: List<String> = emptyList()
 )

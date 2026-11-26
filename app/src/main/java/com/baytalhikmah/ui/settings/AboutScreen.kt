@@ -83,10 +83,14 @@ fun AboutScreen(onBack: () -> Unit) {
             HairlineCard {
                 Column {
                     Text(
-                        "The core Greek vocabulary follows Wilfred E. Major's 80% list; the Latin core is assembled from " +
-                            "Diederich's frequency study, the Dickinson College Commentaries core list, OCR/Leaving Certificate " +
-                            "lists, and Lewis & Short. Examples are generated from a controlled core vocabulary and cite the " +
-                            "reference works consulted. Additional datasets can be imported from Settings as JSON.",
+                        "The Greek and Latin vocabulary is selected from lemma frequencies over the complete Loeb corpus " +
+                            "and split into non-overlapping Basic (85%), Intermediate (90%) and Advanced (95%) bands. " +
+                            "Definitions combine English and native-language explanations; Basic and Intermediate " +
+                            "examples are authentic passages with edition citations, not constructed sentences. " +
+                            "The six reading works keep their original Greek or Latin titles, and their section " +
+                            "questions ask about reasons, results, purposes, conditions, numbers, speakers and what is " +
+                            "not said — every option is a verbatim sentence from the same cleared work, never a choice " +
+                            "between translations.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -103,7 +107,7 @@ fun AboutScreen(onBack: () -> Unit) {
             Spacer(Modifier.height(8.dp))
             HairlineCard {
                 Column {
-                    Text("Version V1.2", style = MaterialTheme.typography.titleMedium)
+                    Text("Version V2.3", style = MaterialTheme.typography.titleMedium)
                     Text(
                         "Kotlin · Jetpack Compose · Material 3 · Room · DataStore · offline-first",
                         style = MaterialTheme.typography.bodySmall,

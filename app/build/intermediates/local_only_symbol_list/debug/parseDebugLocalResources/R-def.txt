@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color ic_launcher_background
+color ic_launcher_dark_background
+color ic_launcher_light_background
+color ic_launcher_scholar_dark_background
+color ic_launcher_scholar_light_background
+color splash_background
+drawable ic_launcher_foreground
+drawable splash_icon
+drawable splash_icon_dark
+drawable splash_icon_light
+drawable splash_icon_scholar_dark
+drawable splash_icon_scholar_light
+font eb_garamond
+font eb_garamond_italic
+mipmap ic_launcher
+mipmap ic_launcher_dark
+mipmap ic_launcher_dark_foreground
+mipmap ic_launcher_dark_round
+mipmap ic_launcher_foreground
+mipmap ic_launcher_light
+mipmap ic_launcher_light_foreground
+mipmap ic_launcher_light_round
+mipmap ic_launcher_round
+mipmap ic_launcher_scholar_dark
+mipmap ic_launcher_scholar_dark_foreground
+mipmap ic_launcher_scholar_dark_round
+mipmap ic_launcher_scholar_light
+mipmap ic_launcher_scholar_light_foreground
+mipmap ic_launcher_scholar_light_round
+string app_name
+style Theme.BaytAlHikmah

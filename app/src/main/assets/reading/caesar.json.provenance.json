@@ -1,0 +1,36 @@
+{
+  "source": "Loeb Classical Library volumes 072 (ABBYY Lingvo DSL export of the Loeb corpus supplied by the project author); text extracted by bayt-v21/src/loeb_text.py",
+  "license": "public domain",
+  "edition": "Loeb Classical Library 072, translated by H. J. Edwards (1917)",
+  "obtained_at": "2026-11-24",
+  "upstream_revision": {
+    "LCL 072": "a4058aaf71bfb0b27a5de286dd6cd8fb0ecbfaa55538be315b05cf506db99679"
+  },
+  "method": "one reading unit per printed division; division numbers are the edition's own, read from its inline [c dimgray] marks and the book carried on each article's index key",
+  "units": 400,
+  "books": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "words": 51216,
+  "with_translation": 400,
+  "asset": "reading/caesar.json",
+  "assetSha256": "91281a1dd19ab99ea4614f7c45334897769d57fb12557fb9bb6764bb4c22e921",
+  "installedBy": "install_reading_assets.py 1",
+  "languageCode": "lat",
+  "workId": "caesar",
+  "counts": {
+    "sections": 400,
+    "books": 8,
+    "referenceWords": 3092
+  },
+  "deduplicated": "Exact repeated halves of original or translation text were collapsed once; words and units are unchanged.",
+  "titleOriginal": "V2.3: work title shown as the original Latin title.",
+  "updated_at": "2026-11-26"
+}

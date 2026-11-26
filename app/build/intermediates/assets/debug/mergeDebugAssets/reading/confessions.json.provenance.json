@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "asset": "reading/confessions.json",
+  "assetSha256": "85c24dc70617cbb2983c1b7bae79f45e588019a9059a670f79d11f51c2a0adb3",
+  "generator": "build_reading_packs.py 1",
+  "obtained_at": "2026-11-25",
+  "sources": [
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/CSEL33.xml",
+      "sha256": "984345076faee6010f82560776fcfaeec0b17aa932267756c0f6aa45a6cbf0d4"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book01.txt",
+      "sha256": "ec67eb1bbde1d0608018d650a544f56d363af1bf0c76ed71595920ad71a42610"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book02.txt",
+      "sha256": "2271c7bd144c29b101f534d54a167462ffb9635ddf4e67953475da250d5c8ec7"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book03.txt",
+      "sha256": "c22883ede9a85654be77555751906eee65ba8e03a8490844d206e0f6c60d9f53"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book04.txt",
+      "sha256": "d648d47da80be9f41b6f42cae677cbc7001ccd4f66a8843f4fc8057526b78268"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book05.txt",
+      "sha256": "a78b0747d5a4ec72d5415122dbbe3e3fdcd137e067a6349abd0152e23ca87994"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book06.txt",
+      "sha256": "7f76bd5d0b7e8cf000a5619b3416c27e89aac4dfef1f65627878f03f48cf168d"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book07.txt",
+      "sha256": "5c7059dc5337bff71a01b71bd40d60accdf5c90aca8ad61a1327e56bc0b27bc9"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book08.txt",
+      "sha256": "ee385cc0c052cd33aa30609f3fd0f3e187e6e4ee55fcc24823671895c36121ec"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book09.txt",
+      "sha256": "7c2e2e860404266559d9dc8bad4e16d706e4e34d7acf3eabdfb9c584ece39cca"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book10.txt",
+      "sha256": "286f0990a1cf73de64497d7a2d09e566da07b13746bca7de3299ddedd0f8ff55"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book11.txt",
+      "sha256": "a9eb56e7fef90c31b9913042c36e28005b5829aa956c276b15957330f525f932"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book12.txt",
+      "sha256": "c5afe52bf76b1d36c66515ecf4d61d65bb6048dd2f1eb061e9d3ec31d1ebdc37"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/confessions/pusey/book13.txt",
+      "sha256": "a8fc071ccc3f6264771c184c1b891d2b7b6a042c7b64f874dbeff672ec41384b"
+    }
+  ],
+  "license": "CSEL 33 Latin encoding CC BY-SA 4.0; Pusey 1838 translation public domain",
+  "method": "CSEL book/section divisions joined to the matching numbered Pusey section",
+  "counts": {
+    "sections": 452,
+    "books": 13,
+    "referenceWords": 6307
+  },
+  "installedBy": "install_reading_assets.py 1",
+  "languageCode": "lat",
+  "workId": "confessions",
+  "deduplicated": "Exact repeated halves of original or translation text were collapsed once; words and units are unchanged.",
+  "titleOriginal": "V2.3: work title shown as the original Latin title.",
+  "updated_at": "2026-11-26"
+}

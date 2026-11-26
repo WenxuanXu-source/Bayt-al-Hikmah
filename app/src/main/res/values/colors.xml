@@ -4,4 +4,6 @@
     <color name="ic_launcher_background">#FAF4E6</color>
     <color name="ic_launcher_light_background">#FAF4E6</color>
     <color name="ic_launcher_dark_background">#0E221F</color>
+    <color name="ic_launcher_scholar_light_background">#F8F0E0</color>
+    <color name="ic_launcher_scholar_dark_background">#102018</color>
 </resources>

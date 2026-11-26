@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.baytalhikmah.data.DatasetAssetsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-26T05:23:03" hostname="Vincentiuss-MacBook-Air.local" time="2.82">
+  <properties/>
+  <testcase name="readingAssetsRegisterAllSixWorksWithCanonicalSections" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.711"/>
+  <testcase name="canonicalHeadwordsKeepSourceDiacritics" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.25"/>
+  <testcase name="provenanceMatchesAssetsAndCoverageThresholds" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.538"/>
+  <testcase name="sampledEntriesGenerateValidQuestionsWithoutConstructedExamples" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.22"/>
+  <testcase name="referencePacksParseAndTablesAreRectangular" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.002"/>
+  <testcase name="sectionQuestionBanksAreFourOptionComprehensionQuestions" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.267"/>
+  <testcase name="sectionWordIndexCoversBasicAndIntermediateOnly" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.332"/>
+  <testcase name="packsAreStructurallyValidAndBooksAreDisjoint" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.365"/>
+  <testcase name="entriesWithIdenticalHeadwordsShareOneRank" classname="com.baytalhikmah.data.DatasetAssetsTest" time="0.134"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

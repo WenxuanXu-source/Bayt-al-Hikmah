@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "language": "grc",
+ "generated_at": "2026-11-26",
+ "generator": "reading_comprehension_assets.py 2",
+ "source": [
+  "reading/john.json",
+  "reading/herodotus.json",
+  "reading/anabasis.json"
+ ],
+ "license": "Derived only from the cleared reading packs. SBLGNT is CC BY 4.0; ASV, Godley, Brownson, Edwards, Bostock-Riley, CSEL 33 and Pusey are public domain; Mayhoff (1906) is CC BY-SA 4.0.",
+ "upstream_revision": {
+  "wordbooks": "grc.basic.json, grc.intermediate.json",
+  "formIndex": "analysis/frequencies/grc.forms.json.gz"
+ },
+ "method": "Each section is questioned about its content: the reason it gives, what it says follows, what is done for a stated purpose, what it concedes, what it conditions, who speaks, what quantity is meant, what the section is about, what it states next, and what it does not state. Passages, answers and distractors are verbatim spans of the cleared packs, so every option is real prose from this work and only one option belongs to this section. Nothing is paraphrased, machine-translated or invented, and no question offers competing translations of a passage.",
+ "counts": {
+  "words": {
+   "sections": 3886,
+   "sectionsWithWords": 3886,
+   "words": 3224,
+   "tokens": 172690
+  },
+  "questions": {
+   "sections": 3886,
+   "questions": 7817,
+   "minPerSection": 2,
+   "maxPerSection": 3,
+   "kinds": {
+    "not_said": 2740,
+    "next": 2002,
+    "occurrence": 776,
+    "name": 579,
+    "condition": 182,
+    "cause": 474,
+    "purpose": 344,
+    "speaker": 90,
+    "quantity": 159,
+    "contrast": 380,
+    "result": 28,
+    "concede": 63
+   }
+  }
+ }
+}

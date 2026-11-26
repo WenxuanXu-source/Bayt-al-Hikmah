@@ -1,0 +1,622 @@
+[
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_owl_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_owl_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_owl_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_owl_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_owl_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_owl_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_owl_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_owl_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_owl_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_owl_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_owl_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_owl_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_light.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_light.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_owl_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_owl_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/font_eb_garamond_italic.ttf.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/font/eb_garamond_italic.ttf"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_owl_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_owl_light_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_light.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_light_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_light_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_scholar_dark.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_scholar_dark.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_owl_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_owl_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_owl_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_owl_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_owl_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_owl_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_owl_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_owl_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_dark.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_dark.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_owl_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_owl_light_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_light.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_owl_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_owl_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_light_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_light.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_light_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_owl_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_owl_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/font_eb_garamond.ttf.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/font/eb_garamond.ttf"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_owl_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_owl_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_scholar_dark.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_scholar_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_owl_light.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_owl_light.xml"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_owl_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_owl_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_owl_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_owl_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_light.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_owl_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_owl_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_owl_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_owl_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_light.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_dark_round.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_dark_round.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_scholar_light.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_owl_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_owl_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_owl_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_owl_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_owl_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_owl_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_scholar_light.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_scholar_light.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_owl_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_owl_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_owl_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_owl_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_owl_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_owl_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_scholar_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-anydpi-v26_ic_launcher_owl_dark.xml.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-anydpi-v26/ic_launcher_owl_dark.xml"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_owl_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_owl_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_owl_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_owl_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_dark_foreground.png"
+    },
+    {
+        "merged": "com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_scholar_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_scholar_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_scholar_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_owl_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_owl_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xhdpi_ic_launcher_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xhdpi/ic_launcher_dark_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxxhdpi_ic_launcher_scholar_light_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxxhdpi/ic_launcher_scholar_light_foreground.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_scholar_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_scholar_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/drawable-nodpi_splash_icon_owl_dark.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/drawable-nodpi/splash_icon_owl_dark.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-hdpi_ic_launcher_owl_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-hdpi/ic_launcher_owl_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_light.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_light.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_dark_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_dark_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-xxhdpi_ic_launcher_scholar_light_round.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-xxhdpi/ic_launcher_scholar_light_round.png"
+    },
+    {
+        "merged": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-debug-63:/mipmap-mdpi_ic_launcher_owl_dark_foreground.png.flat",
+        "source": "/Users/vnctx/.gradle/daemon/8.11.1/com.baytalhikmah.app-main-65:/mipmap-mdpi/ic_launcher_owl_dark_foreground.png"
+    }
+]

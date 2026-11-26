@@ -1,0 +1,172 @@
+# 2026-11-25T14:46:29.252632Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 3
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "LegacyRecordMigrationTest"
+    test_package: "com.baytalhikmah.data"
+    test_method: "readingProgressMigratesFromVersionThree"
+    start_time {
+      seconds: 1795617988
+      nanos: 693000000
+    }
+    end_time {
+      seconds: 1795617988
+      nanos: 791000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/logcat-com.baytalhikmah.data.LegacyRecordMigrationTest-readingProgressMigratesFromVersionThree.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LegacyRecordMigrationTest"
+    test_package: "com.baytalhikmah.data"
+    test_method: "migrationReattachesLearningStateAndRecomputesDailyTasks"
+    start_time {
+      seconds: 1795617988
+      nanos: 804000000
+    }
+    end_time {
+      seconds: 1795617988
+      nanos: 886000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/logcat-com.baytalhikmah.data.LegacyRecordMigrationTest-migrationReattachesLearningStateAndRecomputesDailyTasks.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LegacyRecordMigrationTest"
+    test_package: "com.baytalhikmah.data"
+    test_method: "readingProgressStartsReadingAndOnlyFinishesOnAPerfectAttempt"
+    start_time {
+      seconds: 1795617988
+      nanos: 887000000
+    }
+    end_time {
+      seconds: 1795617988
+      nanos: 888000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/logcat-com.baytalhikmah.data.LegacyRecordMigrationTest-readingProgressStartsReadingAndOnlyFinishesOnAPerfectAttempt.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/Users/vnctx/Documents/Qoder/2026-11-23/13821f07/app/build/outputs/androidTest-results/connected/debug/bayt(AVD) - 15/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

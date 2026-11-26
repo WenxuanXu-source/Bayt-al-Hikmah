@@ -1,0 +1,1356 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "5cc76e7037ccc8b04982ec8ee07eeaa9",
+    "entities": [
+      {
+        "tableName": "languages",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT NOT NULL, `name` TEXT NOT NULL, `nativeName` TEXT NOT NULL, `script` TEXT NOT NULL, `enabled` INTEGER NOT NULL, `datasetVersion` INTEGER NOT NULL, `coverageNote` TEXT NOT NULL, `licenseNote` TEXT NOT NULL, `sources` TEXT NOT NULL, `morphology` TEXT NOT NULL, `sortOrder` INTEGER NOT NULL, PRIMARY KEY(`code`))",
+        "fields": [
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nativeName",
+            "columnName": "nativeName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "script",
+            "columnName": "script",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datasetVersion",
+            "columnName": "datasetVersion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coverageNote",
+            "columnName": "coverageNote",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "licenseNote",
+            "columnName": "licenseNote",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sources",
+            "columnName": "sources",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "morphology",
+            "columnName": "morphology",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "code"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "vocabulary",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `headword` TEXT NOT NULL, `normalizedHeadword` TEXT NOT NULL, `pos` TEXT NOT NULL, `gender` TEXT, `book` TEXT NOT NULL DEFAULT 'BASIC', `definitions` TEXT NOT NULL, `grammaticalClass` TEXT NOT NULL, `inflectionType` TEXT NOT NULL, `principalParts` TEXT NOT NULL, `irregularForms` TEXT NOT NULL, `etymology` TEXT, `etymologyNote` TEXT, `sourceReference` TEXT, `frequencyRank` INTEGER, `datasetVersion` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "headword",
+            "columnName": "headword",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedHeadword",
+            "columnName": "normalizedHeadword",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pos",
+            "columnName": "pos",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "book",
+            "columnName": "book",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'BASIC'"
+          },
+          {
+            "fieldPath": "definitions",
+            "columnName": "definitions",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grammaticalClass",
+            "columnName": "grammaticalClass",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "inflectionType",
+            "columnName": "inflectionType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "principalParts",
+            "columnName": "principalParts",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "irregularForms",
+            "columnName": "irregularForms",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "etymology",
+            "columnName": "etymology",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "etymologyNote",
+            "columnName": "etymologyNote",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sourceReference",
+            "columnName": "sourceReference",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "frequencyRank",
+            "columnName": "frequencyRank",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "datasetVersion",
+            "columnName": "datasetVersion",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_vocabulary_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vocabulary_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          },
+          {
+            "name": "index_vocabulary_normalizedHeadword",
+            "unique": false,
+            "columnNames": [
+              "normalizedHeadword"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vocabulary_normalizedHeadword` ON `${TABLE_NAME}` (`normalizedHeadword`)"
+          },
+          {
+            "name": "index_vocabulary_pos",
+            "unique": false,
+            "columnNames": [
+              "pos"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vocabulary_pos` ON `${TABLE_NAME}` (`pos`)"
+          },
+          {
+            "name": "index_vocabulary_languageCode_book",
+            "unique": false,
+            "columnNames": [
+              "languageCode",
+              "book"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vocabulary_languageCode_book` ON `${TABLE_NAME}` (`languageCode`, `book`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "inflected_forms",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `vocabularyId` TEXT NOT NULL, `writtenForm` TEXT NOT NULL, `normalizedForm` TEXT NOT NULL, `dimensions` TEXT NOT NULL, `quizEligible` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vocabularyId",
+            "columnName": "vocabularyId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "writtenForm",
+            "columnName": "writtenForm",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedForm",
+            "columnName": "normalizedForm",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dimensions",
+            "columnName": "dimensions",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quizEligible",
+            "columnName": "quizEligible",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_inflected_forms_vocabularyId",
+            "unique": false,
+            "columnNames": [
+              "vocabularyId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_inflected_forms_vocabularyId` ON `${TABLE_NAME}` (`vocabularyId`)"
+          },
+          {
+            "name": "index_inflected_forms_normalizedForm",
+            "unique": false,
+            "columnNames": [
+              "normalizedForm"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_inflected_forms_normalizedForm` ON `${TABLE_NAME}` (`normalizedForm`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "example_sentences",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `vocabularyId` TEXT NOT NULL, `originalText` TEXT NOT NULL, `translation` TEXT NOT NULL, `author` TEXT, `work` TEXT, `passageReference` TEXT, `isAuthentic` INTEGER NOT NULL, `targetForm` TEXT, `targetFormNormalized` TEXT, `targetDimensions` TEXT NOT NULL DEFAULT '', PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vocabularyId",
+            "columnName": "vocabularyId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "originalText",
+            "columnName": "originalText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "translation",
+            "columnName": "translation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "author",
+            "columnName": "author",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "work",
+            "columnName": "work",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "passageReference",
+            "columnName": "passageReference",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isAuthentic",
+            "columnName": "isAuthentic",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetForm",
+            "columnName": "targetForm",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "targetFormNormalized",
+            "columnName": "targetFormNormalized",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "targetDimensions",
+            "columnName": "targetDimensions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_example_sentences_vocabularyId",
+            "unique": false,
+            "columnNames": [
+              "vocabularyId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_example_sentences_vocabularyId` ON `${TABLE_NAME}` (`vocabularyId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "learning_records",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vocabularyId` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `status` TEXT NOT NULL, `introducedOn` TEXT, `firstLearnedOn` TEXT, `lastReviewedOn` TEXT, `totalAttempts` INTEGER NOT NULL, `correctAttempts` INTEGER NOT NULL, `incorrectAttempts` INTEGER NOT NULL, `difficult` INTEGER NOT NULL, PRIMARY KEY(`vocabularyId`))",
+        "fields": [
+          {
+            "fieldPath": "vocabularyId",
+            "columnName": "vocabularyId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "introducedOn",
+            "columnName": "introducedOn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "firstLearnedOn",
+            "columnName": "firstLearnedOn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastReviewedOn",
+            "columnName": "lastReviewedOn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "totalAttempts",
+            "columnName": "totalAttempts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctAttempts",
+            "columnName": "correctAttempts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "incorrectAttempts",
+            "columnName": "incorrectAttempts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "difficult",
+            "columnName": "difficult",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "vocabularyId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_learning_records_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_learning_records_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          },
+          {
+            "name": "index_learning_records_status",
+            "unique": false,
+            "columnNames": [
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_learning_records_status` ON `${TABLE_NAME}` (`status`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "daily_tasks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `learningDate` TEXT NOT NULL, `book` TEXT NOT NULL DEFAULT 'BASIC', `plannedNewWords` INTEGER NOT NULL, `completedNewWords` INTEGER NOT NULL, `preliminaryStatus` TEXT NOT NULL, `newLearningStatus` TEXT NOT NULL, `postTestStatus` TEXT NOT NULL, `overallStatus` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "learningDate",
+            "columnName": "learningDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "book",
+            "columnName": "book",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'BASIC'"
+          },
+          {
+            "fieldPath": "plannedNewWords",
+            "columnName": "plannedNewWords",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedNewWords",
+            "columnName": "completedNewWords",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preliminaryStatus",
+            "columnName": "preliminaryStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "newLearningStatus",
+            "columnName": "newLearningStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "postTestStatus",
+            "columnName": "postTestStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "overallStatus",
+            "columnName": "overallStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_daily_tasks_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_daily_tasks_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          },
+          {
+            "name": "index_daily_tasks_languageCode_book_learningDate",
+            "unique": true,
+            "columnNames": [
+              "languageCode",
+              "book",
+              "learningDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_daily_tasks_languageCode_book_learningDate` ON `${TABLE_NAME}` (`languageCode`, `book`, `learningDate`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "saved_words",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vocabularyId` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `savedOn` TEXT NOT NULL, PRIMARY KEY(`vocabularyId`))",
+        "fields": [
+          {
+            "fieldPath": "vocabularyId",
+            "columnName": "vocabularyId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "savedOn",
+            "columnName": "savedOn",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "vocabularyId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_saved_words_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_saved_words_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "learning_sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `learningDate` TEXT NOT NULL, `book` TEXT NOT NULL DEFAULT 'BASIC', `vocabularyIds` TEXT NOT NULL, `targetCount` INTEGER NOT NULL, `cardCursor` INTEGER NOT NULL, `quizRound` INTEGER NOT NULL, `passedIds` TEXT NOT NULL, `pendingQuizIds` TEXT NOT NULL, `phase` TEXT NOT NULL, `activeQuizSessionId` TEXT, `completedOn` TEXT, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "learningDate",
+            "columnName": "learningDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "book",
+            "columnName": "book",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'BASIC'"
+          },
+          {
+            "fieldPath": "vocabularyIds",
+            "columnName": "vocabularyIds",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetCount",
+            "columnName": "targetCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cardCursor",
+            "columnName": "cardCursor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quizRound",
+            "columnName": "quizRound",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "passedIds",
+            "columnName": "passedIds",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pendingQuizIds",
+            "columnName": "pendingQuizIds",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phase",
+            "columnName": "phase",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeQuizSessionId",
+            "columnName": "activeQuizSessionId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "completedOn",
+            "columnName": "completedOn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_learning_sessions_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_learning_sessions_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          },
+          {
+            "name": "index_learning_sessions_languageCode_book_learningDate",
+            "unique": true,
+            "columnNames": [
+              "languageCode",
+              "book",
+              "learningDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_learning_sessions_languageCode_book_learningDate` ON `${TABLE_NAME}` (`languageCode`, `book`, `learningDate`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "test_sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `book` TEXT NOT NULL DEFAULT 'BASIC', `testType` TEXT NOT NULL, `sessionDate` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `completedAt` INTEGER, `totalVocabularyItems` INTEGER NOT NULL, `currentGroup` INTEGER NOT NULL, `currentQuestion` INTEGER NOT NULL, `status` TEXT NOT NULL, `scorePercent` REAL, `passed` INTEGER, `dailyTaskId` TEXT, `learningSessionId` TEXT, `vocabularyIds` TEXT NOT NULL, `firstAttemptCorrect` INTEGER NOT NULL, `firstAttemptTotal` INTEGER NOT NULL, `passingThreshold` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "book",
+            "columnName": "book",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'BASIC'"
+          },
+          {
+            "fieldPath": "testType",
+            "columnName": "testType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionDate",
+            "columnName": "sessionDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "totalVocabularyItems",
+            "columnName": "totalVocabularyItems",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentGroup",
+            "columnName": "currentGroup",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentQuestion",
+            "columnName": "currentQuestion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scorePercent",
+            "columnName": "scorePercent",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "passed",
+            "columnName": "passed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dailyTaskId",
+            "columnName": "dailyTaskId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "learningSessionId",
+            "columnName": "learningSessionId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vocabularyIds",
+            "columnName": "vocabularyIds",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstAttemptCorrect",
+            "columnName": "firstAttemptCorrect",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstAttemptTotal",
+            "columnName": "firstAttemptTotal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "passingThreshold",
+            "columnName": "passingThreshold",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_test_sessions_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_sessions_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          },
+          {
+            "name": "index_test_sessions_sessionDate",
+            "unique": false,
+            "columnNames": [
+              "sessionDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_sessions_sessionDate` ON `${TABLE_NAME}` (`sessionDate`)"
+          },
+          {
+            "name": "index_test_sessions_status",
+            "unique": false,
+            "columnNames": [
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_sessions_status` ON `${TABLE_NAME}` (`status`)"
+          },
+          {
+            "name": "index_test_sessions_testType",
+            "unique": false,
+            "columnNames": [
+              "testType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_sessions_testType` ON `${TABLE_NAME}` (`testType`)"
+          },
+          {
+            "name": "index_test_sessions_languageCode_book",
+            "unique": false,
+            "columnNames": [
+              "languageCode",
+              "book"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_sessions_languageCode_book` ON `${TABLE_NAME}` (`languageCode`, `book`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "test_questions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `sessionId` TEXT NOT NULL, `vocabularyId` TEXT NOT NULL, `questionType` TEXT NOT NULL, `prompt` TEXT NOT NULL, `contextTranslation` TEXT, `highlightText` TEXT, `options` TEXT NOT NULL, `correctIndex` INTEGER NOT NULL, `selectedIndex` INTEGER, `isCorrect` INTEGER, `retryCount` INTEGER NOT NULL, `isReviewCopy` INTEGER NOT NULL, `groupIndex` INTEGER NOT NULL, `orderInGroup` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionId",
+            "columnName": "sessionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vocabularyId",
+            "columnName": "vocabularyId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionType",
+            "columnName": "questionType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prompt",
+            "columnName": "prompt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contextTranslation",
+            "columnName": "contextTranslation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "highlightText",
+            "columnName": "highlightText",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "options",
+            "columnName": "options",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctIndex",
+            "columnName": "correctIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedIndex",
+            "columnName": "selectedIndex",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isCorrect",
+            "columnName": "isCorrect",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "retryCount",
+            "columnName": "retryCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isReviewCopy",
+            "columnName": "isReviewCopy",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "groupIndex",
+            "columnName": "groupIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderInGroup",
+            "columnName": "orderInGroup",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_test_questions_sessionId",
+            "unique": false,
+            "columnNames": [
+              "sessionId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_questions_sessionId` ON `${TABLE_NAME}` (`sessionId`)"
+          },
+          {
+            "name": "index_test_questions_vocabularyId",
+            "unique": false,
+            "columnNames": [
+              "vocabularyId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_questions_vocabularyId` ON `${TABLE_NAME}` (`vocabularyId`)"
+          },
+          {
+            "name": "index_test_questions_groupIndex",
+            "unique": false,
+            "columnNames": [
+              "groupIndex"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_test_questions_groupIndex` ON `${TABLE_NAME}` (`groupIndex`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "legacy_word_keys",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vocabularyId` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `normalizedHeadword` TEXT NOT NULL, `pos` TEXT NOT NULL, PRIMARY KEY(`vocabularyId`))",
+        "fields": [
+          {
+            "fieldPath": "vocabularyId",
+            "columnName": "vocabularyId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedHeadword",
+            "columnName": "normalizedHeadword",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pos",
+            "columnName": "pos",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "vocabularyId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "reading_works",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `languageCode` TEXT NOT NULL, `author` TEXT NOT NULL, `title` TEXT NOT NULL, `summary` TEXT NOT NULL, `textSource` TEXT NOT NULL, `translationSource` TEXT NOT NULL, `bookCount` INTEGER NOT NULL, `sortOrder` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "author",
+            "columnName": "author",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "summary",
+            "columnName": "summary",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "textSource",
+            "columnName": "textSource",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "translationSource",
+            "columnName": "translationSource",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookCount",
+            "columnName": "bookCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_reading_works_languageCode",
+            "unique": false,
+            "columnNames": [
+              "languageCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_reading_works_languageCode` ON `${TABLE_NAME}` (`languageCode`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "reading_lexemes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workId` TEXT NOT NULL, `surface` TEXT NOT NULL, `lemma` TEXT NOT NULL, `pos` TEXT NOT NULL, `gloss` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workId",
+            "columnName": "workId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "surface",
+            "columnName": "surface",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lemma",
+            "columnName": "lemma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pos",
+            "columnName": "pos",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gloss",
+            "columnName": "gloss",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_reading_lexemes_workId",
+            "unique": false,
+            "columnNames": [
+              "workId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_reading_lexemes_workId` ON `${TABLE_NAME}` (`workId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "reading_sections",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workId` TEXT NOT NULL, `bookNumber` INTEGER NOT NULL, `bookLabel` TEXT NOT NULL, `sectionLabel` TEXT NOT NULL, `heading` TEXT NOT NULL, `originalText` TEXT NOT NULL, `translationText` TEXT NOT NULL, `newWordIds` TEXT NOT NULL, `sortOrder` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workId",
+            "columnName": "workId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookNumber",
+            "columnName": "bookNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookLabel",
+            "columnName": "bookLabel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sectionLabel",
+            "columnName": "sectionLabel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "heading",
+            "columnName": "heading",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "originalText",
+            "columnName": "originalText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "translationText",
+            "columnName": "translationText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "newWordIds",
+            "columnName": "newWordIds",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_reading_sections_workId",
+            "unique": false,
+            "columnNames": [
+              "workId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_reading_sections_workId` ON `${TABLE_NAME}` (`workId`)"
+          },
+          {
+            "name": "index_reading_sections_workId_bookNumber",
+            "unique": false,
+            "columnNames": [
+              "workId",
+              "bookNumber"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_reading_sections_workId_bookNumber` ON `${TABLE_NAME}` (`workId`, `bookNumber`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5cc76e7037ccc8b04982ec8ee07eeaa9')"
+    ]
+  }
+}

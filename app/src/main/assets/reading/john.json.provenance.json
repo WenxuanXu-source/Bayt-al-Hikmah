@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "asset": "reading/john.json",
+  "assetSha256": "cf610a47e0f14a58078478f19282e82fd97010ed11e1a1b841740e698a6baab1",
+  "generator": "build_reading_packs.py 1",
+  "obtained_at": "2026-11-25",
+  "sources": [
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/john/John.sblgnt.xml",
+      "sha256": "11fa4ec61127f109f4582845737963dc66a532e33dca7d489875b9dd91da00e2"
+    },
+    {
+      "path": "/Users/vnctx/Documents/bayt-v21/sources/reading-cleared/john/John.asv.usx",
+      "sha256": "7fdaa09214230e9b2aff461eba4c4b6b94e73a2210a6c9b96868235cd718767d"
+    }
+  ],
+  "license": "SBLGNT CC BY 4.0 and ASV 1901 public domain",
+  "method": "canonical verse divisions",
+  "counts": {
+    "sections": 878,
+    "books": 1,
+    "referenceWords": 842
+  },
+  "installedBy": "install_reading_assets.py 1",
+  "languageCode": "grc",
+  "workId": "john",
+  "deduplicated": "Exact repeated halves of original or translation text were collapsed once; words and units are unchanged.",
+  "titleOriginal": "V2.3: work title shown as the original Greek title.",
+  "updated_at": "2026-11-26"
+}

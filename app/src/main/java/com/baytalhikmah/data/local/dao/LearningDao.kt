@@ -12,6 +12,7 @@ import com.baytalhikmah.data.local.VocabularyEntity
 import com.baytalhikmah.data.model.Gender
 import com.baytalhikmah.data.model.LearningStatus
 import com.baytalhikmah.data.model.Pos
+import com.baytalhikmah.data.model.VocabBook
 import kotlinx.coroutines.flow.Flow
 
 data class SavedVocabularyRow(
@@ -37,20 +38,61 @@ interface LearningDao {
     @Query("SELECT * FROM learning_records WHERE languageCode = :language")
     suspend fun records(language: String): List<LearningRecordEntity>
 
-    @Query("SELECT COUNT(*) FROM learning_records WHERE languageCode = :language AND status = 'LEARNED'")
-    fun observeLearnedCount(language: String): Flow<Int>
+    @Query("SELECT * FROM learning_records WHERE vocabularyId IN (:ids)")
+    suspend fun recordsForIds(ids: List<String>): List<LearningRecordEntity>
 
-    @Query("SELECT COUNT(*) FROM learning_records WHERE languageCode = :language AND status = 'LEARNED'")
-    suspend fun learnedCount(language: String): Int
+    /**
+     * Progress is reported per wordbook, so the record has to resolve through the
+     * entry it belongs to. Records whose entry is no longer installed drop out,
+     * which keeps a rebuilt wordbook from counting words nobody can study.
+     */
+    @Query(
+        """
+        SELECT r.* FROM learning_records r JOIN vocabulary v ON v.id = r.vocabularyId
+        WHERE r.languageCode = :language AND v.book = :book
+        """
+    )
+    suspend fun records(language: String, book: VocabBook): List<LearningRecordEntity>
 
-    @Query("SELECT * FROM learning_records WHERE languageCode = :language AND status = 'LEARNED'")
-    suspend fun learnedRecords(language: String): List<LearningRecordEntity>
+    @Query(
+        """
+        SELECT COUNT(*) FROM learning_records r JOIN vocabulary v ON v.id = r.vocabularyId
+        WHERE r.languageCode = :language AND v.book = :book AND r.status = 'LEARNED'
+        """
+    )
+    fun observeLearnedCount(language: String, book: VocabBook): Flow<Int>
 
-    @Query("SELECT * FROM learning_records WHERE languageCode = :language AND status = 'IN_PROGRESS'")
-    suspend fun inProgressRecords(language: String): List<LearningRecordEntity>
+    @Query(
+        """
+        SELECT COUNT(*) FROM learning_records r JOIN vocabulary v ON v.id = r.vocabularyId
+        WHERE r.languageCode = :language AND v.book = :book AND r.status = 'LEARNED'
+        """
+    )
+    suspend fun learnedCount(language: String, book: VocabBook): Int
 
-    @Query("SELECT vocabularyId FROM learning_records WHERE languageCode = :language AND status IN ('IN_PROGRESS', 'LEARNED')")
-    suspend fun introducedIds(language: String): List<String>
+    @Query(
+        """
+        SELECT r.* FROM learning_records r JOIN vocabulary v ON v.id = r.vocabularyId
+        WHERE r.languageCode = :language AND v.book = :book AND r.status = 'LEARNED'
+        """
+    )
+    suspend fun learnedRecords(language: String, book: VocabBook): List<LearningRecordEntity>
+
+    @Query(
+        """
+        SELECT r.* FROM learning_records r JOIN vocabulary v ON v.id = r.vocabularyId
+        WHERE r.languageCode = :language AND v.book = :book AND r.status = 'IN_PROGRESS'
+        """
+    )
+    suspend fun inProgressRecords(language: String, book: VocabBook): List<LearningRecordEntity>
+
+    @Query(
+        """
+        SELECT r.vocabularyId FROM learning_records r JOIN vocabulary v ON v.id = r.vocabularyId
+        WHERE r.languageCode = :language AND v.book = :book AND r.status IN ('IN_PROGRESS', 'LEARNED')
+        """
+    )
+    suspend fun introducedIds(language: String, book: VocabBook): List<String>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertRecord(record: LearningRecordEntity)
@@ -58,8 +100,20 @@ interface LearningDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertRecords(records: List<LearningRecordEntity>)
 
+    @Query("UPDATE learning_records SET vocabularyId = :target WHERE vocabularyId = :source")
+    suspend fun repointRecord(source: String, target: String)
+
+    @Query("DELETE FROM learning_records WHERE vocabularyId = :vocabularyId")
+    suspend fun deleteRecord(vocabularyId: String)
+
     @Query("UPDATE learning_records SET status = :status, firstLearnedOn = COALESCE(firstLearnedOn, :date) WHERE vocabularyId IN (:ids)")
     suspend fun markLearned(ids: List<String>, status: LearningStatus, date: String)
+
+    @Query(
+        "UPDATE learning_records SET mastered = 1, status = 'LEARNED', " +
+            "firstLearnedOn = COALESCE(firstLearnedOn, :date) WHERE vocabularyId IN (:ids)"
+    )
+    suspend fun markMastered(ids: List<String>, date: String)
 
     @Query(
         """
@@ -82,23 +136,23 @@ interface LearningDao {
     @Query("DELETE FROM learning_records")
     suspend fun deleteAllRecords()
 
-    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND learningDate = :date")
-    suspend fun dailyTask(language: String, date: String): DailyTaskEntity?
+    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND book = :book AND learningDate = :date")
+    suspend fun dailyTask(language: String, date: String, book: VocabBook): DailyTaskEntity?
 
     @Query("SELECT * FROM daily_tasks WHERE id = :id")
     suspend fun dailyTaskById(id: String): DailyTaskEntity?
 
-    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND learningDate = :date")
-    fun observeDailyTask(language: String, date: String): Flow<DailyTaskEntity?>
+    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND book = :book AND learningDate = :date")
+    fun observeDailyTask(language: String, date: String, book: VocabBook): Flow<DailyTaskEntity?>
 
-    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language ORDER BY learningDate DESC")
-    fun observeDailyTasks(language: String): Flow<List<DailyTaskEntity>>
+    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND book = :book ORDER BY learningDate DESC")
+    fun observeDailyTasks(language: String, book: VocabBook): Flow<List<DailyTaskEntity>>
 
-    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language ORDER BY learningDate DESC LIMIT :limit")
-    suspend fun recentDailyTasks(language: String, limit: Int): List<DailyTaskEntity>
+    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND book = :book ORDER BY learningDate DESC LIMIT :limit")
+    suspend fun recentDailyTasks(language: String, book: VocabBook, limit: Int): List<DailyTaskEntity>
 
-    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND overallStatus = 'COMPLETED'")
-    suspend fun completedDailyTasks(language: String): List<DailyTaskEntity>
+    @Query("SELECT * FROM daily_tasks WHERE languageCode = :language AND book = :book AND overallStatus = 'COMPLETED'")
+    suspend fun completedDailyTasks(language: String, book: VocabBook): List<DailyTaskEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertDailyTask(task: DailyTaskEntity)
@@ -118,23 +172,26 @@ interface LearningDao {
     @Query("SELECT * FROM learning_sessions WHERE id = :id")
     fun observeLearningSession(id: String): Flow<LearningSessionEntity?>
 
-    @Query("SELECT * FROM learning_sessions WHERE languageCode = :language AND learningDate = :date")
-    suspend fun learningSessionForDate(language: String, date: String): LearningSessionEntity?
+    @Query("SELECT * FROM learning_sessions WHERE languageCode = :language AND book = :book AND learningDate = :date")
+    suspend fun learningSessionForDate(language: String, date: String, book: VocabBook): LearningSessionEntity?
 
-    @Query("SELECT * FROM learning_sessions WHERE languageCode = :language AND phase != 'COMPLETE' ORDER BY learningDate DESC")
-    fun observeUnfinishedSessions(language: String): Flow<List<LearningSessionEntity>>
+    @Query("SELECT * FROM learning_sessions WHERE languageCode = :language AND book = :book AND phase != 'COMPLETE' ORDER BY learningDate DESC")
+    fun observeUnfinishedSessions(language: String, book: VocabBook): Flow<List<LearningSessionEntity>>
 
     @Query("SELECT * FROM learning_sessions WHERE phase != 'COMPLETE'")
     suspend fun allUnfinishedSessions(): List<LearningSessionEntity>
 
-    @Query("SELECT * FROM learning_sessions WHERE languageCode = :language AND phase != 'COMPLETE' AND learningDate != :date ORDER BY learningDate DESC")
-    suspend fun unfinishedSessionsBefore(language: String, date: String): List<LearningSessionEntity>
+    @Query("SELECT * FROM learning_sessions WHERE languageCode = :language AND book = :book AND phase != 'COMPLETE' AND learningDate != :date ORDER BY learningDate DESC")
+    suspend fun unfinishedSessionsBefore(language: String, date: String, book: VocabBook): List<LearningSessionEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertLearningSession(session: LearningSessionEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertLearningSessions(sessions: List<LearningSessionEntity>)
+
+    @Query("DELETE FROM learning_sessions WHERE id = :id")
+    suspend fun deleteLearningSession(id: String)
 
     @Query("SELECT * FROM learning_sessions")
     suspend fun allLearningSessions(): List<LearningSessionEntity>
@@ -180,6 +237,9 @@ interface LearningDao {
 
     @Query("DELETE FROM saved_words WHERE vocabularyId = :vocabularyId")
     suspend fun removeSavedWord(vocabularyId: String)
+
+    @Query("UPDATE saved_words SET vocabularyId = :target WHERE vocabularyId = :source")
+    suspend fun repointSaved(source: String, target: String)
 
     @Query("SELECT COUNT(*) FROM saved_words WHERE languageCode = :language")
     fun observeSavedCount(language: String): Flow<Int>
